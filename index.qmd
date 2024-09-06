@@ -1,3 +1,7 @@
 # Introduction {.unnumbered}
 
 This is my online notebook for COMP/STAT112 course taken at [Macalester College](https://www.macalester.edu/).  Please, use the side bar on the left for navigation.
+
+Hello this Huthaifa./n
+I am planning to major in Computer Science./n
+I love playing chess 
