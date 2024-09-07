@@ -1,0 +1,37 @@
+# Homework 1
+
+# Exercise 1: Warming up
+
+The **dessert** at Cafe Mac is the *best*
+
+![](https://wearecocina.com/wp-content/uploads/2020/06/desserts-1-min.png)
+
+# Exercise 2: Import tidy data
+
+# Exercise 3: Tidy data properties
+
+-   What are the units of observation, ie, what does each row represent?
+
+*Individual students and their preferences*
+
+-   Name one quantitative variable, ie, column, in the dataset. Preferred distance from Macalester food
+
+*Students preferred distance from campus*
+
+-   Name one categorical variable, ie, column, in the dataset. Preferred Cafe Mac food
+
+*Students favorite food at Cafe Mac*
+
+# Exercise 4: Get to know the data
+
+# Exercise 5: Data structure
+
+# Exercise 6: Your turn
+
+# Exercise 7: Brainstorm
+
+------------------------------------------------------------------------
+
+# Import the data
+
+survey \<- read.csv("https://mac-stat.github.io/data/112_fall_2024_survey.csv") View(survey)
