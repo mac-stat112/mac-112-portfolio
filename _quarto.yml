@@ -4,8 +4,8 @@ project:
 
 book:
   title: "COMP/STAT112 Notebook"
-  author: "Your Name Here"
-  date: "Date Here"
+  author: "Huthiafa Mohammad"
+  date: "09/"
   reader-mode: true
   
   chapters:
@@ -26,6 +26,8 @@ format:
   html:
     theme: cosmo
     toc: true
+    toc-depth: 1
+    embed-resources: true
     code-copy: true
     code-line-numbers: true
     code-tools: true
