@@ -10,6 +10,11 @@ book:
   
   chapters:
     - index.qmd
+    
+    - part: Homework/homework_1.qmd
+      chapters: 
+        - aria-label: homework_1.qmd
+
 
     - part: activities/README.qmd
       chapters: 

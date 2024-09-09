@@ -1,0 +1,15 @@
+{
+  "hash": "eca697cbf173aedf60411892b9d50624",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle : \"Homework 1\"\nauthor : \"Huthaifa Mohammad\"\n\nhtml:\n  toc: true\n  toc-location: left\n  toc-depth: 1\n  embed-resources: true\nsection-titles: true \n---\n\n# Exercise 1: Warming up\n\n\n# Exercise 2: Import tidy data\n# Import the data\n\n::: {.cell}\n\n```{.r .cell-code}\nsurvey <- read.csv(\"https://mac-stat.github.io/data/112_fall_2024_survey.csv\")\n```\n:::\n\n\n# Exercise 3: Tidy data properties\n\n\n# Exercise 4: Get to know the data\n\n\n# Exercise 5: Data structure\n\n\n# Exercise 6: Your turn\n\n\n# Exercise 7: Brainstorm\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

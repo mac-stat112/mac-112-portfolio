@@ -34,10 +34,20 @@
     "href": "activities/activity-01.html",
     "title": "1  Activity 01",
     "section": "",
-    "text": "This time we have",
+    "text": "hello world",
     "crumbs": [
       "Activities",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Activity 01</span>"
+    ]
+  },
+  {
+    "objectID": "Homework/homework_1.html",
+    "href": "Homework/homework_1.html",
+    "title": "Homework 1",
+    "section": "",
+    "text": "Exercise 1: Warming up\n\n\nExercise 2: Import tidy data\n\n\nImport the data\n\nsurvey &lt;- read.csv(\"https://mac-stat.github.io/data/112_fall_2024_survey.csv\")\n\n\n\nExercise 3: Tidy data properties\n\n\nExercise 4: Get to know the data\n\n\nExercise 5: Data structure\n\n\nExercise 6: Your turn\n\n\nExercise 7: Brainstorm",
+    "crumbs": [
+      "Homework 1"
     ]
   }
 ]
