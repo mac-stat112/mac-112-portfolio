@@ -1,5 +1,5 @@
 ---
-title: "Data viz (Notes)"
+title: "Data viz (Activity)"
 format:
   html:
     toc: true
@@ -242,7 +242,12 @@ head(hikes)
 ```
 
 a.  What features would we like a visualization of the *categorical* difficulty `rating` variable to capture?
+
+**A bar graph would best visualize the rating difficulties because there are only three measurements.**
+
 b.  What about a visualization of the *quantitative* `elevation` variable?
+
+**A histogram would best visualize the contrast between the elevations.** 
 
 \
 \
@@ -302,34 +307,34 @@ NOTE:
 -   Not all of these are "good" plots. We're just exploring `ggplot`.
 
 ```{r}
-# COMMENT on the change in the code and the corresponding change in the plot
+# The data was added within the frame for difficulty ratings of each hike. 
 ggplot(hikes, aes(x = rating)) +
   geom_bar()
 ```
 
 ```{r}
-# COMMENT on the change in the code and the corresponding change in the plot
+# This data is comparing the number of hikes and the difficulty rating. 
 ggplot(hikes, aes(x = rating)) +
   geom_bar() +
   labs(x = "Rating", y = "Number of hikes")
 ```
 
 ```{r}
-# COMMENT on the change in the code and the corresponding change in the plot
+# This histogram is comparing the number of hikes and difficulty rating and simultaneously filling the bars with blue. 
 ggplot(hikes, aes(x = rating)) +
   geom_bar(fill = "blue") +
   labs(x = "Rating", y = "Number of hikes")
 ```
 
 ```{r}
-# COMMENT on the change in the code and the corresponding change in the plot
+# This histogram does the same as the last chart but outlines the bars in orange. 
 ggplot(hikes, aes(x = rating)) +
   geom_bar(color = "orange", fill = "blue") +
   labs(x = "Rating", y = "Number of hikes")
 ```
 
 ```{r}
-# COMMENT on the change in the code and the corresponding change in the plot
+# This turned the background white. 
 ggplot(hikes, aes(x = rating)) +
   geom_bar(color = "orange", fill = "blue")  +
   labs(x = "Rating", y = "Number of hikes") +
