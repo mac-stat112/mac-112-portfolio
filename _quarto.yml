@@ -13,10 +13,8 @@ book:
 
     - part: activities/README.qmd
       chapters: 
-      - activities/activity-01.qmd
-      - activities/activity-02.qmd
-      - activities/activity-03.qmd
-    
+      - activities/03-univariate-viz-notes.qmd
+      
     - part: notes/README.qmd
       chapters: 
       - notes/note-01.qmd
