@@ -373,6 +373,9 @@ Color outlines while fill fills in the entire shape.
 In general, bar charts allow us to examine the following properties of a *categorical* variable:
 
 -   **observed categories**: What categories did we observe?
+
+
+
 -   **variability between categories**: Are observations evenly spread out among the categories, or are some categories more common than others?
 
 We must then *translate* this information into the *context* of our analysis, here hikes in the Adirondacks. Summarize here what you learned from the bar chart, in context.
