@@ -15,6 +15,7 @@ survey <- read.csv("https://ajohns24.github.io/data/112/about_us_2024.csv")
 str(survey)
 
 'data.frame':	28 obs. of  4 variables:
+
 $ cafe_mac         : chr  "Cheesecake" "Cheese pizza" "udon noodles" "egg rolls" ...
 
 $ minutes_to_campus: int  15 10 4 7 5 35 5 15 7 20 ...
