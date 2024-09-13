@@ -374,17 +374,21 @@ In general, bar charts allow us to examine the following properties of a *catego
 
 -   **observed categories**: What categories did we observe?
 
-*There are more moderate hikes and less difficult ones.* 
+      *There are more moderate hikes and less difficult ones.* 
 
 -   **variability between categories**: Are observations evenly spread out among the categories, or are some categories more common than others?
 
-
+      *The moderate category is more common, so they are not spread evenly.*
 
 We must then *translate* this information into the *context* of our analysis, here hikes in the Adirondacks. Summarize here what you learned from the bar chart, in context.
+
+*Most hikes in the Adirondacks are moderate, second most are easy, and the least amount of hikes are difficult.*
 
 ### Part c {.unnumbered}
 
 Is there anything you don't like about this barplot? For example: check out the x-axis again.
+
+
 
 \
 \

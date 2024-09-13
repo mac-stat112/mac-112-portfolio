@@ -14,7 +14,7 @@ book:
     - part: activities/README.qmd
       chapters: 
       - activities/Exercise_3.qmd
-      - activities/Pre-exercise_4_Review.qmd
+      - activities/Exercise_4.qmd
       
     - part: notes/README.qmd
       chapters: 
