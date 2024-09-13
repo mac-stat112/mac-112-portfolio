@@ -1,19 +1,9 @@
 ---
 title: "Exercise 4"
-number-sections: true
-execute: 
-  warning: false
-fig-height: 2.75
-fig-width: 4.25
-fig-env: 'figure'
-fig-pos: 'h'
-fig-align: center
-code-fold: false
 ---
 
 ```{r}
 #| echo: false
-#| results: hide
 #| message: false
 
 # Load packages
@@ -21,24 +11,6 @@ library(tidyverse)
 library(tint)
 library(mosaic)
 
-question_num <- 0
-NextQ <- function() {
-  question_num <<- question_num + 1
-  return(question_num)
-}
-
-library(conflicted)
-conflict_prefer("rename", winner = "dplyr")
-conflict_prefer("filter", winner = "dplyr")
-conflict_prefer("smiths", winner = "tidyr")
-conflict_prefer("melt", winner = "reshape2")
-conflict_prefer("count", winner = "dplyr")
-conflict_prefer("group_by", winner = "dplyr")
-conflicts_prefer(ggthemes::theme_map)
-conflicts_prefer(base::sum)
-conflicts_prefer(base::min)
-conflicts_prefer(base::max)
-conflicts_prefer(base::mean)
 ```
 
 ::: {.callout-caution title="Learning Goals"}
@@ -93,9 +65,9 @@ survey <- read.csv("https://ajohns24.github.io/data/112/about_us_2024.csv")
 
 # How many students have now filled out the survey?
 
+nrow(survey)
 
 # What type of variables do we have?
-
 ```
 
 ### EXAMPLE 1: Hangout Preferences {.unnumbered}
