@@ -354,19 +354,19 @@ Reflect on the `ggplot()` code.
 
 -   What's the purpose of the `+`? When do we use it?
 
-The plus is to add layers to your ggplot. 
+      *The plus is to add layers to your ggplot.*
 
 -   We added the bars using `geom_bar()`? Why "geom"?
 
-Geom refers to the geometric object we use to visualize the data. 
+      *Geom refers to the geometric object we use to visualize the data.* 
 
 -   What does `labs()` stand for?
 
-Labels, you can modify ggplot labels with this function. 
+      *Labels, you can modify ggplot labels with this function.* 
 
 -   What's the difference between `color` and `fill`?
 
-Color outlines while fill fills in the entire shape. 
+      *Color outlines while fill fills in the entire shape.* 
 
 ### Part b {.unnumbered}
 
@@ -374,9 +374,11 @@ In general, bar charts allow us to examine the following properties of a *catego
 
 -   **observed categories**: What categories did we observe?
 
-
+*There are more moderate hikes and less difficult ones.* 
 
 -   **variability between categories**: Are observations evenly spread out among the categories, or are some categories more common than others?
+
+
 
 We must then *translate* this information into the *context* of our analysis, here hikes in the Adirondacks. Summarize here what you learned from the bar chart, in context.
 
