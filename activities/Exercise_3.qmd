@@ -1,22 +1,11 @@
 ---
-title: "Data viz (Activity)"
+title: "Exercise 3"
 format:
   html:
     toc: true
     toc-depth: 2
     embed-resources: true
 ---
-
-```{r include = FALSE}
-# This chunk just sets up some styling (eg: default size of our images)
-knitr::opts_chunk$set(
-  collapse = TRUE, 
-  warning = FALSE,
-  message = FALSE,
-  fig.height = 2.75, 
-  fig.width = 4.25,
-  fig.align = 'center')
-```
 
 # Background
 

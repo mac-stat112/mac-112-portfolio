@@ -1,5 +1,5 @@
 ---
-title: "Bivariate viz"
+title: "Exercise 4"
 number-sections: true
 execute: 
   warning: false
@@ -10,7 +10,6 @@ fig-pos: 'h'
 fig-align: center
 code-fold: false
 ---
-
 
 ```{r}
 #| echo: false
@@ -62,7 +61,6 @@ For more information about the topics covered in this chapter, refer to the reso
 :::
 
 ::: {.callout-important title="Instructions"}
-
 **General**
 
 -   Be kind to yourself.
@@ -71,10 +69,9 @@ For more information about the topics covered in this chapter, refer to the reso
 
 **Activity Specific**
 
-
 Help each other with the following:
 
--   Create a new Quarto document in the activities folder of your portfolio project and do not forgot to include it in `_quarto.yml` file.  Then click the `</> Code` link at the top right corner of this page and copy the code into the created Quarto document.  This is where you'll take notes.  Remember that the portfolio is yours, so take notes in whatever way is best for you.
+-   Create a new Quarto document in the activities folder of your portfolio project and do not forgot to include it in `_quarto.yml` file. Then click the `</> Code` link at the top right corner of this page and copy the code into the created Quarto document. This is where you'll take notes. Remember that the portfolio is yours, so take notes in whatever way is best for you.
 -   **Don't start the Exercises section before we get there as a class.** First, engage in class discussion and eventually collaborate with your group on the exercises!
 -   Go slow! Don't worry about memorizing the code, but *do* slow down to examine it, *even if* you're not asked explicitly about the code. Think about:
     -   How the data variables are used in the plot.
@@ -85,7 +82,6 @@ Help each other with the following:
     -   If you're feeling like the required exercises gave you plenty to chew on, simply stop the activity. Go back and review the material you learned. *You never need to think about the optional exercises.*
     -   If you're feeling like your brain still has some space after completing the required exercises, try the optional ones. These exercises are either "bonus" visualizations or intuition checks about some material coming up.
 :::
-
 
 ## Review
 
@@ -102,9 +98,7 @@ survey <- read.csv("https://ajohns24.github.io/data/112/about_us_2024.csv")
 
 ```
 
-
-
-### EXAMPLE 1: Hangout Preferences {-}
+### EXAMPLE 1: Hangout Preferences {.unnumbered}
 
 Students were asked, in that moment, where they'd most like to spend time outside. How did they answer? Was there a lot of agreement or a lot of variability in answers? Build and interpret a plot that helps address these questions while reviewing:
 
@@ -126,15 +120,12 @@ Students were asked, in that moment, where they'd most like to spend time outsid
 library(tidyverse)
 ```
 
-
-### EXAMPLE 2: Temperature Preferences {-}
+### EXAMPLE 2: Temperature Preferences {.unnumbered}
 
 Students were asked about their ideal outdoor temperature, in degrees Celsius. How did they answer? What was the typical response? What was the range in responses? Were there any outliers? Build and interpret 2 plots that help address these questions.
 
 ```{r}
 ```
-
-
 
 ::: {.callout-note title="Bar Charts vs. Histograms"}
 Bar charts & histograms can appear pretty similar, but they do different things.
@@ -143,15 +134,12 @@ Bar charts & histograms can appear pretty similar, but they do different things.
 -   **Histograms** count up the number of observations that fall into different numerical *ranges* of variable. They're good for *quantitative* variables, especially those with many different observed outcomes.
 :::
 
-
-
 ## New stuff
 
 Thus far, we've been studying one variable at a time, using *univariate* plots. But once we get a sense of how individual variables behave on their own, our questions often turn to *relationships* among variables. For example, in our `hikes` data:
 
 -   How much `time` does it take to complete a hike? ------\> How is `time` related to a hike's `elevation`? What about its `length`?
 -   How does difficult `rating` vary from hike to hike? -------\> How is difficulty `rating` related to a hike's `ascent`?
-
 
 ### Exploring relationships
 
@@ -166,17 +154,17 @@ Visualizations can help explore:
 -   relationship *strength* (degree of variability from the trend)
 -   *outliers* in the relationship
 
-#### EXAMPLE 3 {-}
+#### EXAMPLE 3 {.unnumbered}
 
 For each pair of variables below, sketch on paper a visualization of their relationship. Focus on general viz process, don't worry about the exact details. The data here are totally made up.
 
-  a.  3pm temperature (response) vs 9am temperature (predictor)
+a.  3pm temperature (response) vs 9am temperature (predictor)
 
 ```{r}
 data.frame(temp_3pm = c(24, 26, 20, 15, 15, 15), temp_9am = c(14, 18, 15, 13, 11, 11))
 ```
 
-  b.  3pm temperature (response) vs location (predictor)
+b.  3pm temperature (response) vs location (predictor)
 
 ```{r}
 weather <- data.frame(temp_3pm = c(24, 26, 20, 15, 15, 0, 40, 60, 57, 44, 51, 75),
@@ -206,8 +194,6 @@ ggplot(weather, aes(x = location)) +
       geom_bar()
 ```
 
-
-
 ### General guidance for building bivariate plots
 
 As with univariate plots, an appropriate visualization for the relationship between 2 variables depends upon whether the variables are **quantitative** or **categorical**. In general:
@@ -215,7 +201,6 @@ As with univariate plots, an appropriate visualization for the relationship betw
 -   Each **quantitative variable** requires a new *axis* (or a quantitative *scale* if we run out of axes).
 -   Each **categorical variable** requires a new way to "group" the graphic (eg: using colors, shapes, separate facets, etc)
 -   For visualizations in which **overlap** in glyphs or plots obscures the patterns, try faceting or transparency.
-
 
 ## Exercises (required)
 
@@ -227,9 +212,9 @@ A wrangled version of this data, is imported below, after being combined with:
 
 -   2013 county-level demographics from the `df_county_demographics` data set from the `choroplethr` R package
 -   historical voting trends in the state in which the county falls (from <https://www.270towin.com/content/blue-and-red-states>):
-    - red = consistently Republican
-    - blue = consistently Democratic
-    - purple = something in between
+    -   red = consistently Republican
+    -   blue = consistently Democratic
+    -   purple = something in between
 
 ```{r}
 # Load data
@@ -246,8 +231,6 @@ We'll use this data to explore voting outcomes within the U.S.'s 2-party system.
 | 2020 | Donald Trump         | Joe Biden            |
 | 2016 | Donald Trump         | Hillary Clinton      |
 | 2012 | Mitt Romney          | Barack Obama         |
-
-
 
 ### Exercise 0: Review {.unnumbered}
 
@@ -273,13 +256,10 @@ What follow-up questions do you have?
 ```{r}
 ```
 
-
 ### Exercise 1: Quantitative vs Quantitative Intuition Check {.unnumbered}
 
 ::: {.callout-important title="Be Quick"}
-
-Don't spend more than 3 minutes on this! 
-
+Don't spend more than 3 minutes on this!
 :::
 
 Below is a **scatterplot** of the Republican support in 2020 vs 2016. Notice that:
@@ -296,7 +276,6 @@ Try to replicate this using `ggplot()`. THINK:
 
 ```{r}
 ```
-
 
 ### Exercise 2: 2 Quantitiative Variables {.unnumbered}
 
@@ -336,7 +315,6 @@ ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
   geom_text(aes(label = state_abbr))
 ```
 
-
 ### Exercise 3: Reflect {.unnumbered}
 
 Summarize the relationship between the Republican support in 2020 and 2016. Be sure to comment on:
@@ -344,7 +322,6 @@ Summarize the relationship between the Republican support in 2020 and 2016. Be s
 -   the strength of the relationship (weak/moderate/strong)\
 -   the direction of the relationship (positive/negative)\
 -   outliers (in what state do counties deviate from the national trend? Any ideas why this might be the case?)
-
 
 ### Exercise 4: Visualizing trend {.unnumbered}
 
@@ -373,7 +350,6 @@ ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
   geom_smooth(method = "lm")
 ```
 
-
 ### Exercise 5: Your Turn {.unnumbered}
 
 To examine how the 2020 results are related to some county demographics, construct scatterplots of `repub_pct_20` vs `median_rent`, and `repub_pct_20` vs `median_age`. Summarize the relationship between these two variables and comment on which is the better predictor of `repub_pct_20`, `median_rent` or `median_age`.
@@ -389,7 +365,6 @@ To examine how the 2020 results are related to some county demographics, constru
 
 ```
 
-
 ### Exercise 6: A Sad Scatterplot {.unnumbered}
 
 Next, let's explore the relationship between a county's 2020 Republican support `repub_pct_20` and the `historical` political trends in its state. In this case `repub_pct_20` is **quantitative**, but `historical` is **categorical**. Explain why a scatterplot might *not* be an effective visualization for exploring this relationship. (What questions does / doesn't it help answer?)
@@ -398,7 +373,6 @@ Next, let's explore the relationship between a county's 2020 Republican support 
 ggplot(elections, aes(y = repub_pct_20, x = historical)) +
   geom_point()
 ```
-
 
 ### Exercise 7: Quantitative vs Categorical -- Violins & Boxes {.unnumbered}
 
@@ -424,13 +398,10 @@ Box plots are constructed from five numbers - the minimum, 25th percentile, medi
 
 Summarize what you've learned about the 2020 Republican county-level support within and between red/purple/blue states.
 
-
 ### Exercise 8: Quantitative vs Categorical -- Intuition Check {.unnumbered}
 
 ::: {.callout-important title="Be Quick"}
-
-Don't spend more than 3 minutes on this! 
-
+Don't spend more than 3 minutes on this!
 :::
 
 We can also visualize the relationship between `repub_pct_20` and `historical` using our familiar density plots. In the plot below, notice that we simply created a separate density plot for each `historical` category. (The plot itself is "bad" but we'll fix it below.) Try to adjust the code chunk below, which starts with a density plot of `repub_pct_20` alone, to re-create this image.
@@ -441,7 +412,6 @@ We can also visualize the relationship between `repub_pct_20` and `historical` u
 ggplot(elections, aes(x = repub_pct_20)) +
   geom_density()
 ```
-
 
 ### Exercise 9: Quantitative vs Categorical -- Density Plots {.unnumbered}
 
@@ -484,7 +454,6 @@ ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
   scale_fill_manual(values = c("blue", "purple", "red"))
 ```
 
-
 ### Exercise 10 {.unnumbered}
 
 We've now learned 3 (of many) ways to visualize the relationship between a quantitative and categorical variable: side-by-side violins, boxplots, and density plots.
@@ -493,18 +462,13 @@ We've now learned 3 (of many) ways to visualize the relationship between a quant
 -   What is one pro of density plots relative to boxplots?
 -   What is one con of density plots relative to boxplots?
 
-
 ### Exercise 11: Categorical vs Categorical -- Intuition Check {.unnumbered}
 
 Finally, let's simply explore who *won* each county in 2020 (`winner_20`) and how this breaks down by `historical` voting trends in the state. That is, let's explore the relationship between 2 categorical variables! Following the same themes as above, we can utilize grouping features such as fill/color or facets to distinguish between different categories of `winner_20` and `historical`.
 
 ::: {.callout-important title="Be Quick"}
-
 Spend at most 5 minutes on the following intuition check. Adjust the code below to recreate the following two plots.
-
 :::
-
-
 
 ![](https://mac-stat.github.io/images/112/barplot_demo.png){width="60%"}
 
@@ -519,7 +483,6 @@ ggplot(elections, aes(x = historical)) +
 ggplot(elections, aes(x = winner_20)) +
   geom_bar()
 ```
-
 
 ### Exercise 12: Categorical vs Categorical {.unnumbered}
 
@@ -561,16 +524,13 @@ Name one pro and one con of using the "proportional bar plot" instead of one of 
 
 What's your favorite bar plot from part and why?
 
-
 ### Exercise 13: Practice (now or later) {.unnumbered}
 
 ::: {.callout-important title="Decide"}
-
 Decide what's best for you:
 
 -   Try this extra practice now.
 -   Reflect on the above exercises and come back to this extra practice later (but before the next class).
-
 :::
 
 Import some daily weather data from a few locations in Australia:
@@ -602,7 +562,6 @@ Reflect before doing anything. What types of variables are these? How might you 
 
 
 ```
-
 
 ## Exercises (optional)
 
@@ -656,7 +615,6 @@ ggplot(elections, aes(x = repub_pct_20, y = fct_reorder(state_abbr, repub_pct_20
 -   Which states tend to have the most variability in outcomes from county to county? The least?
 -   What other interesting patterns do you notice?
 -   Does this plot prompt any other questions?
-
 
 ### Optional Exercise 2: Total Outcomes by State {.unnumbered}
 
@@ -718,7 +676,6 @@ ggplot(elections_by_state, aes(x = repub_pct_20, y = fct_reorder(state_abbr, rep
 -   Summarize the main takeaways from the plots. Which states changed the most from 2016 to 2020? The least? Where did the Republican support increase? Where did it decrease?
 -   What other questions are you left with?
 
-
 ::: content-hidden
 ## Wrap-up
 
@@ -737,7 +694,6 @@ Homework plan:
 MSCS listserv:
 
 If you’re an MSCS major / minor, or plan to be, I strongly encourage you to sign up for the [MSCS community listserv](https://docs.google.com/document/d/1Z2Ex-_z_8vm2ZhgdT4le-DwieUCtYZM8dDysaj6bseI/edit). This is where we share information about department events, internships opportunities, etc.
-
 :::
 
 ## Solutions
@@ -757,8 +713,6 @@ nrow(survey)
 str(survey)
 ```
 
-
-
 **EXAMPLE 1: Hangout preferences**
 
 ```{r}
@@ -770,8 +724,6 @@ ggplot(survey, aes(x = hangout)) +
   geom_bar()
 ```
 
-
-
 **EXAMPLE 2: Temperature preferences**
 
 ```{r}
@@ -781,8 +733,6 @@ ggplot(survey, aes(x = fave_temp)) +
 ggplot(survey, aes(x = fave_temp)) + 
   geom_density()
 ```
-
-
 
 ### Exercise 0:
 
@@ -798,7 +748,6 @@ ggplot(elections, aes(x = repub_pct_20)) +
 ### Exercise 1: quantitative vs quantitative intuition check {.unnumbered}
 
 See next exercise.
-
 
 ### Exercise 2: 2 quantitiative variables {.unnumbered}
 
@@ -830,11 +779,9 @@ ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
   geom_text(aes(label = state_abbr))
 ```
 
-
 ### Exercise 3: Reflect {.unnumbered}
 
 There's a strong, positive association -- the higher the Republican support in 2016, the higher it was in 2020. There are some counties in Texas and Utah where the R support in 2020 was disproportionately higher than in 2016.
-
 
 ### Exercise 4: Visualizing trend {.unnumbered}
 
@@ -859,7 +806,6 @@ ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
   geom_smooth(method = "lm")
 ```
 
-
 ### Exercise 5: Your turn {.unnumbered}
 
 There's a moderate, positive association between R support and median age -- the older the average age in a county, the higher the R support tends to be. However, there's a stronger, *negative* association between R support and median rent -- the higher the rent (a proxy for cost of living), the lower the R support tends to be.
@@ -876,11 +822,9 @@ ggplot(elections, aes(y = repub_pct_20, x = median_age)) +
 
 ```
 
-
 ### Exercise 6: A sad scatterplot {.unnumbered}
 
 See next exercise.
-
 
 ### Exercise 7: quantitative vs categorical -- violins & boxes {.unnumbered}
 
@@ -898,11 +842,9 @@ ggplot(elections, aes(y = repub_pct_20, x = historical)) +
 
 There's quite a bit of range in county-level R support within blue, purple, and red states. However, R support tends to be higher in red states and lower in blue states.
 
-
 ### Exercise 8: quantitative vs categorical -- intuition check {.unnumbered}
 
 See next exercise.
-
 
 ### Exercise 9: quantitative vs categorical -- density plots {.unnumbered}
 
@@ -937,18 +879,15 @@ ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
   scale_fill_manual(values = c("blue", "purple", "red"))
 ```
 
-
 ### Exercise 10 {.unnumbered}
 
 -   One pro of density plots relative to boxplots: doesn't oversimplify the data / boil the data down to just 5 numbers.
 
 -   Name one con of density plots relative to boxplots: boxplots can be easier to interpret
 
-
 ### Exercise 11: categorical vs categorical intuition check {.unnumbered}
 
 see exercise below
-
 
 ### Exercise 12: categorical vs categorical {.unnumbered}
 
@@ -978,7 +917,6 @@ ggplot(elections, aes(x = historical, fill = winner_20)) +
 #### Part a {.unnumbered}
 
 pro = easier to compare the relative outcomes in blue vs purple vs red states con = lose track of how many counties fall into blue vs purple vs red states
-
 
 ### Exercise 13: Practice (now or later) {.unnumbered}
 
@@ -1024,7 +962,6 @@ ggplot(elections, aes(x = repub_pct_20, y = fct_reorder(state_abbr, repub_pct_20
   scale_fill_manual(values = c("blue", "purple", "red"))
 
 ```
-
 
 ### Optional exercise 2: total outcomes by state {.unnumbered}
 
