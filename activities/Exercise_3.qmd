@@ -354,15 +354,15 @@ Reflect on the `ggplot()` code.
 
 -   What's the purpose of the `+`? When do we use it?
 
-The plus is to run multiple functions at once. 
+The plus is to add layers to your ggplot. 
 
 -   We added the bars using `geom_bar()`? Why "geom"?
 
-Because it's a geometric shape. 
+Geom refers to the geometric object we use to visualize the data. 
 
 -   What does `labs()` stand for?
 
-Labels. 
+Labels, you can modify ggplot labels with this function. 
 
 -   What's the difference between `color` and `fill`?
 
