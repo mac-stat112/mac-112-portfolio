@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>COMP/STAT112 Notebook - 2&nbsp; Exercise 2 - RStudio Workshop</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../activities/Exercise_3.html" rel="next">
+<link href="../activities/Exercise_1.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../activities/README.html">Activities</a></li><li class="breadcrumb-item"><a href="../activities/Exercise_2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Exercise 2 - RStudio Workshop</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">COMP/STAT112 Notebook</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../activities/README.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Activities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../activities/Exercise_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Exercise 1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../activities/Exercise_2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Exercise 2 - RStudio Workshop</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../activities/Exercise_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Exercise 3 - Univariate Viz</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../activities/Exercise_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exercise 4 - Bivariate Viz</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../activities/Exercise_5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Exercise 5 - Multivariate Viz</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../notes/README.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/note-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Note 01</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/note-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Note 02</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#warm-up" id="toc-warm-up" class="nav-link active" data-scroll-target="#warm-up"><span class="header-section-number">2.1</span> Warm-up</a>
+  <ul class="collapse">
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
+  <li><a href="#important-tips" id="toc-important-tips" class="nav-link" data-scroll-target="#important-tips">Important Tips</a></li>
+  </ul></li>
+  <li><a href="#homework-1" id="toc-homework-1" class="nav-link" data-scroll-target="#homework-1"><span class="header-section-number">2.2</span> Homework 1</a>
+  <ul class="collapse">
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#exercise-1-warming-up" id="toc-exercise-1-warming-up" class="nav-link" data-scroll-target="#exercise-1-warming-up">Exercise 1: Warming Up</a></li>
+  <li><a href="#exercise-2-import-tidy-data" id="toc-exercise-2-import-tidy-data" class="nav-link" data-scroll-target="#exercise-2-import-tidy-data">Exercise 2: Import Tidy Data</a></li>
+  <li><a href="#exercise-3-tidy-data-properties" id="toc-exercise-3-tidy-data-properties" class="nav-link" data-scroll-target="#exercise-3-tidy-data-properties">Exercise 3: Tidy Data Properties</a></li>
+  <li><a href="#exercise-4-know-the-data" id="toc-exercise-4-know-the-data" class="nav-link" data-scroll-target="#exercise-4-know-the-data">Exercise 4: Know the Data</a></li>
+  <li><a href="#exercise-5-data-structure" id="toc-exercise-5-data-structure" class="nav-link" data-scroll-target="#exercise-5-data-structure">Exercise 5: Data Structure</a></li>
+  <li><a href="#exercise-6-your-turn" id="toc-exercise-6-your-turn" class="nav-link" data-scroll-target="#exercise-6-your-turn">Exercise 6: Your turn</a></li>
+  <li><a href="#exercise-7-brainstorm" id="toc-exercise-7-brainstorm" class="nav-link" data-scroll-target="#exercise-7-brainstorm">Exercise 7: Brainstorm</a></li>
+  <li><a href="#optional-more-challenges" id="toc-optional-more-challenges" class="nav-link" data-scroll-target="#optional-more-challenges">Optional: More Challenges</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../activities/README.html">Activities</a></li><li class="breadcrumb-item"><a href="../activities/Exercise_2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Exercise 2 - RStudio Workshop</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Exercise 2 - RStudio Workshop</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-caution callout-titled" title="Learning Goals">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning Goals
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Getting more familiar with RStudio</li>
+<li>Learn about a reproducible workflow in RStudio</li>
+<li>Work on Homework 1 with your group. The goals of the homework are:
+<ol type="a">
+<li>Explore tidy data</li>
+<li>Get familiar with RStudio</li>
+<li>Use Quarto to communicate reproducible document</li>
+</ol></li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Additional Resources">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Additional Resources
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For more information about the topics covered in this chapter, refer to the resources below:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=0vmY6aDWmgU&amp;list=PLyEH7o09I467e8zck95awweg_bGuLzqjz&amp;index=2">Setting up for success in COMP/STAT 112 (YouTube)</a> by Lisa Lendway<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li><a href="https://rstudio.github.io/cheatsheets/quarto.pdf">Quarto Cheatsheet (pdf)</a></li>
+<li><a href="https://quarto.org/docs/get-started/hello/rstudio.html">Quarto Get Started Guide (html)</a></li>
+</ul>
+</div>
+</div>
+<section id="warm-up" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="warm-up"><span class="header-section-number">2.1</span> Warm-up</h2>
+<section id="background" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="background">Background</h3>
+<section id="whats-the-point-of-this-course" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="whats-the-point-of-this-course">What’s the point of this course?</h4>
+<p>Build knowledge from data within a particular domain of inquiry, and particular contexts.</p>
+</section>
+<section id="why-will-we-use-rrstudio-as-a-tool-in-this-course" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="why-will-we-use-rrstudio-as-a-tool-in-this-course">Why will we use R/RStudio as a tool in this course?</h4>
+<ul>
+<li>It’s open access, ie, free!</li>
+<li>It’s open source, ie, anyone can contribute to its development</li>
+<li>It’s used broadly–here are some examples where R is used:
+<ul>
+<li><a href="https://www.youtube.com/watch?v=k6hD-Fagboc&amp;list=PL9HYL-VRX0oRFZslRGHwHuwea7SvAATHp&amp;index=8">Logan Pratico</a>: making “eviction data accessible to the legal aid community”</li>
+<li><a href="https://www.rstudio.com/resources/rstudioglobal-2021/humanitarian-data-science-with-r/">Ahmadou Dicko</a>: humanitarians creating “life saving data products”</li>
+<li><a href="https://www.rstudio.com/resources/rstudioglobal-2021/rkenyacensus-package/">Shelmith Kariuki</a>: Kenyan government census</li>
+<li><a href="https://www.youtube.com/watch?v=w4roQNlPAkU&amp;list=PL9HYL-VRX0oRFZslRGHwHuwea7SvAATHp&amp;index=25">Laura DeCicco</a>: U.S. Geological Survey (USGS) discovery and retrieval of hydrologic data</li>
+<li><a href="https://www.youtube.com/watch?v=iFXslnnxqYk&amp;list=PL9HYL-VRX0oRFZslRGHwHuwea7SvAATHp&amp;index=9">Nick Snellgrove &amp; Uli Muellner</a>: studying aquatic invasive species in MN</li>
+</ul></li>
+</ul>
+</section>
+<section id="rstudio-layout" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="rstudio-layout">RStudio Layout</h4>
+<p>Below is a screenshot of the default layout for RStudio.</p>
+</section>
+<section id="console" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="console">Console</h4>
+<p>Last class, we spent most of our time in the console. However,</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 66%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Console is good for…</th>
+<th style="text-align: left;">Console is bad for most everything else, including…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">quick calculations</td>
+<td style="text-align: left;">documenting our work</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">trying out code</td>
+<td style="text-align: left;">editing our work</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pulling up help files</td>
+<td style="text-align: left;">communicating our work</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">being able to <em>reproduce</em> our work</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="quarto" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="quarto">Quarto</h3>
+<section id="reproducibility-with-quarto" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="reproducibility-with-quarto">Reproducibility with Quarto</h4>
+<p>It’s important to document and communicate every step in the data analysis process, e.g.&nbsp;data collection, cleaning, and analysis, so that others and ourselves can <em>reproduce</em> and hence <em>verify</em> and <em>build upon</em> our work.</p>
+<p>RStudio includes tools for creating reproducible and lovely documents, webpages, books (like this online manual!), etc that allow us to interleave text, code, output, images, tables, etc. Quarto is integrated into RStudio and if you’ve used R Markdown, it looks very similar.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Quarto">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Quarto
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Quarto is an technology that incorporates code from many programming languages such as R along with styled text (headers, bold, italics, links, etc.) using markdown.</p>
+</div>
+</div>
+</section>
+<section id="quarto-example" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="quarto-example">Quarto Example</h4>
+<p>Download then move <a href="../student_notes/quarto-demo.qmd">this Quarto document</a> into the activities folder of your portfolio project and do not forgot to include it in <code>_quarto.yml</code> file. Open the Quarto document in RStudio and follow the prompts therein. Note that this document explores the basics. We’ll pick up more details as we go, often by making and learning from mistakes. The Quarto cheatsheets linked at the top of this chapter presents more features of Quarto.</p>
+</section>
+</section>
+<section id="important-tips" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="important-tips">Important Tips</h3>
+<section id="quarto-files-.qmd-vs-console" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="quarto-files-.qmd-vs-console">Quarto Files (.qmd) vs Console</h4>
+<ul>
+<li><p>The console does <em>not</em> communicate with Quarto. Things you define or type in the console are NOT defined, stored, or run in the .qmd.</p></li>
+<li><p>Quarto <em>can</em> communicate with the console, but only if you tell it to.</p>
+<ul>
+<li>IT WILL: if you run a chunk inside your .qmd (by clicking the green arrow), it is also run and stored in the console.</li>
+<li>IT WON’T: if you render your .qmd to html but do not also run the chunks inside the .qmd, the results will be displayed in the html but <em>not</em> run or stored in the console.</li>
+</ul></li>
+</ul>
+</section>
+<section id="comments" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="comments">Comments</h4>
+<p>Leaving short notes (known as comments) about what our code is doing is an important aspect of communication. It reminds our future selves, and communicates to others, what our thought and code process was. Hence comments are important to reproducibility. In the R chunks, comments are proceeded by a pound sign: <code># This is an example comment</code>.</p>
+<div id="fig-comments" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-comments-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-comments" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-cat-comment" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-cat-comment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/uncommented_code_meme_2.png" id="fig-cat-comment" class="img-fluid figure-img" data-ref-parent="fig-comments">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-cat-comment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-comments" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-wizard-comment" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-wizard-comment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/uncommented_code_meme_1.png" id="fig-wizard-comment" class="img-fluid figure-img" data-ref-parent="fig-comments">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-wizard-comment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-comments-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Left: Leaving comments can feel silly in the moment <a href="https://www.reddit.com/r/ProgrammerHumor/comments/8w54mx/code_comments_be_like/">(Reddit source)</a>. Right: But your future self and others will thank you <a href="http://www.quickmeme.com/meme/3r25zh">(quickmeme source)</a>.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="styling-guides" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="styling-guides">Styling Guides</h4>
+<p>All of this emphasis on communication is not specific to this class, it is a general expectation. Further, the code structure we’ll use this semester reflects <em>common</em> practice, but not the <em>only</em> practice. Various companies / entities have their own R “style guides”. Below are two examples of such styling guides.</p>
+<ul>
+<li><a href="https://style.tidyverse.org/">tidyverse style guide</a>
+<ul>
+<li>R developers like using the snake_case when naming variables</li>
+</ul></li>
+<li><a href="https://google.github.io/styleguide/Rguide.html">Google’s R Style Guide</a>
+<ul>
+<li>Google on the other hand recommends using the camelCase when naming variables</li>
+</ul></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="homework-1" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="homework-1"><span class="header-section-number">2.2</span> Homework 1</h2>
+<div class="callout callout-style-default callout-important callout-titled" title="Instructions, Reminder">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Instructions, Reminder
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>The following exercises will be due as homework 1.</li>
+<li>You should work on these exercises in groups, but write up your own work.</li>
+</ul>
+</div>
+</div>
+<section id="getting-started" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="getting-started">Getting Started</h3>
+<p>For most homeworks and in-class activities, you will be provided with a Quarto (.qmd) template. However, it’s also important to practice starting your <em>own</em> Quarto .qmd from scratch. You’ll do that here.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Instructions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Instructions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before starting the exercises, take the following steps:</p>
+<ul>
+<li><p>Follow the instructions on <a href="99-appendix3.qmd">Appendix: Submitting Homeworks</a> to create your homework repository</p></li>
+<li><p>In the <strong>homeworks</strong> folder of your cloned repository, create a new Quarto (.qmd) file: File window in the lower-right corner –&gt; Add New File (second icon from the left) –&gt; Quarto Doc… –&gt; name it <code>homework_01.qmd</code></p></li>
+<li><p>Edit the<code>_quarto.yml</code> file to include the document</p></li>
+<li><p>In the newly created document, add the following YAML header at the top. The YAML option <code>number-sections</code> will prevent numbering the headers of the documents.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1"></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Homework 1"</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Below the yaml header, add section headers for each homework exercise as follows:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">## Exercise 1: Warming up</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="fu">## Exercise 2: Import tidy data</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a></span>
+<span id="cb2-6"><a href="#cb2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="fu">## Exercise 3: Tidy data properties</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a></span>
+<span id="cb2-9"><a href="#cb2-9"></a></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="fu">## Exercise 4: Get to know the data</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a></span>
+<span id="cb2-12"><a href="#cb2-12"></a></span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="fu">## Exercise 5: Data structure</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a></span>
+<span id="cb2-15"><a href="#cb2-15"></a></span>
+<span id="cb2-16"><a href="#cb2-16"></a><span class="fu">## Exercise 6: Your turn</span></span>
+<span id="cb2-17"><a href="#cb2-17"></a></span>
+<span id="cb2-18"><a href="#cb2-18"></a></span>
+<span id="cb2-19"><a href="#cb2-19"></a><span class="fu">## Exercise 7: Brainstorm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Render the book to html by clicking <strong>Render Book</strong> button in the <strong>Build</strong> located in the upper-right section.</p></li>
+<li><p>Put your answers to each exercise under the appropriate <code># Exercise</code> section. <strong>You do not need to write out the question/prompt itself.</strong></p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="exercise-1-warming-up" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="exercise-1-warming-up">Exercise 1: Warming Up</h3>
+<ul>
+<li>Write 1 sentence about one of your favorite foods at Cafe Mac. Make sure to include an <em>italicized</em> word and a <strong>bold</strong> word.</li>
+<li>Show a .png image of the food from the web. In Google, you can add <code>filetype:png</code> to the beginning of your search term, click on the photo you want, and copy the image address.</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled" title="Check → Commit → Push">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check → Commit → Push
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before continuing, click <strong>Render Book</strong> again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message <strong>Finish HW1 Ex1</strong> and push to GitHub.</p>
+</div>
+</div>
+</section>
+<section id="exercise-2-import-tidy-data" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="exercise-2-import-tidy-data">Exercise 2: Import Tidy Data</h3>
+<p>A quick survey was filled before class. So, let’s work with this data. The first step to working with data in RStudio is getting it in there which depends on:</p>
+<ul>
+<li>file format, eg, <code>.xls</code> (Excel spreadsheet), <code>.csv</code>, or <code>.txt</code></li>
+<li>storage locations, eg, online, on your desktop, or built into RStudio itself.</li>
+</ul>
+<p>Our data is stored as a <strong>.csv</strong> file <strong>online</strong>. Within a new R chunk, import and store this data as <code>survey</code>. Take note of the function name and the argument it takes.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Import the data</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>survey <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://mac-stat.github.io/data/112_fall_2024_survey.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Note that nothing new appears in your document after you import the data. This is because we <em>stored</em>, but didn’t print, the data. Actually, we don’t <em>want</em> to print the data in our .qmd file–it would be too messy.</p>
+<p>There are 2 quick ways to check out the entire data table to get a sense of its structure and contents:</p>
+<ol type="1">
+<li>Type <code>View(survey)</code> in the <strong>console</strong>.</li>
+<li>In the Environment tab (upper right pane), click on <code>survey</code>.</li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled" title="Check → Commit → Push">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check → Commit → Push
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before continuing, click <strong>Render Book</strong> again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message <strong>Finish HW1 Ex2</strong> and push to GitHub.</p>
+</div>
+</div>
+</section>
+<section id="exercise-3-tidy-data-properties" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="exercise-3-tidy-data-properties">Exercise 3: Tidy Data Properties</h3>
+<p>Answers the following prompts in a bulleted list in the order they’re presented.</p>
+<ul>
+<li>What are the units of observation, ie, what does each row represent?</li>
+<li>Name one <em>quantitative</em> variable, ie, column, in the dataset.</li>
+<li>Name one <em>categorical</em> variable, ie, column, in the dataset.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Creating Bulleted List">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Creating Bulleted List
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To create a bulleted list, use <code>-</code> in front of each item and make sure to leave an empty line before the list.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Check → Commit → Push">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check → Commit → Push
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before continuing, click <strong>Render Book</strong> again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message <strong>Finish HW1 Ex3</strong> and push to GitHub.</p>
+</div>
+</div>
+</section>
+<section id="exercise-4-know-the-data" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="exercise-4-know-the-data">Exercise 4: Know the Data</h3>
+<p>Before we can learn anything from our data, we must understand its structure. For each function below, try out <em>one at a time</em> then write a <em>short</em> comment/note about what the function does in the indicated places. To make for easier recall later, try to connect your comment on what the function <em>does</em> to how it’s <em>named</em>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Replace this with a comment on what dim() does</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">dim</span>(survey)</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># Replace this with a comment on what nrow() does</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="fu">nrow</span>(survey)</span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="co"># Replace this with a comment on what head() does</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="fu">head</span>(survey)</span>
+<span id="cb4-9"><a href="#cb4-9"></a></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="co"># Replace this with a comment on what head(___, 3) does</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="fu">head</span>(survey, <span class="dv">3</span>)</span>
+<span id="cb4-12"><a href="#cb4-12"></a></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="co"># Replace this with a comment on what tail() does</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="fu">tail</span>(survey)</span>
+<span id="cb4-15"><a href="#cb4-15"></a></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="co"># Replace this with a comment on what names() does</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="fu">names</span>(survey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Check → Commit → Push">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check → Commit → Push
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before continuing, click <strong>Render Book</strong> again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message <strong>Finish HW1 Ex4</strong> and push to GitHub.</p>
+</div>
+</div>
+</section>
+<section id="exercise-5-data-structure" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="exercise-5-data-structure">Exercise 5: Data Structure</h3>
+<p>It’s important that we understand the different types or structures of the <strong>objects</strong> we store. Having such information will inform what types of analyses are appropriate and the appropriate R code for these analyses. The <code>class()</code> function is important here. The example below shows how it can be used and what output it produces.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">class</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>y <span class="ot">&lt;-</span> <span class="st">"pizza"</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">class</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+</div>
+<p>There are various object classes, including:</p>
+<ul>
+<li><code>num</code> or <code>numeric</code></li>
+<li><code>int</code> or <code>integer</code></li>
+<li><code>chr</code> or <code>character</code></li>
+<li><code>factor</code>, and</li>
+<li><code>data.frame</code>.</li>
+</ul>
+<p>Complete the chunk below to explore the classes/structure of our <code>survey</code> data and the variables within the <code>survey</code> data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Obtain the overall class of the survey object</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a></span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="co"># Examine the structure of each variable within survey (including class)</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="co"># Just take note of what information we gain here (no need to write more)</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="fu">str</span>(survey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Check → Commit → Push">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check → Commit → Push
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before continuing, click <strong>Render Book</strong> again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message <strong>Finish HW1 Ex5</strong> and push to GitHub.</p>
+</div>
+</div>
+</section>
+<section id="exercise-6-your-turn" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="exercise-6-your-turn">Exercise 6: Your turn</h3>
+<p>Let’s practice these same ideas using data on World Cup football/soccer found on:</p>
+<p><code>https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-11-29/worldcups.csv</code></p>
+<p>Data is only useful if we know what it’s measuring! You can find a <strong>codebook</strong>, i.e.&nbsp;document that describes the data, <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-11-29">here</a>. Address each prompt below using R functions. Include both the <code>#</code> prompt and your code in the chunk.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Import and name the dataset (you pick a name!)</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a></span>
+<span id="cb10-3"><a href="#cb10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="co"># Print the first 6 rows of the dataset</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a></span>
+<span id="cb10-6"><a href="#cb10-6"></a></span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="co"># How many years of data do we have? And how many measurements do we have on each year?</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a></span>
+<span id="cb10-9"><a href="#cb10-9"></a></span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="co"># Get a list of all variable names in the dataset</span></span>
+<span id="cb10-11"><a href="#cb10-11"></a></span>
+<span id="cb10-12"><a href="#cb10-12"></a></span>
+<span id="cb10-13"><a href="#cb10-13"></a><span class="co"># Display the class and other information for each variable in the dataset</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Check → Commit → Push">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check → Commit → Push
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before continuing, click <strong>Render Book</strong> again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message <strong>Finish HW1 Ex6</strong> and push to GitHub.</p>
+</div>
+</div>
+</section>
+<section id="exercise-7-brainstorm" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="exercise-7-brainstorm">Exercise 7: Brainstorm</h3>
+<p>We’ve just scratched the surface. In a bulleted list (<code>-</code>), write out 3 questions about the World Cup that we might answer using these data. Be creative. The questions don’t have to be questions we’ve learned how to answer yet.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Check → Commit → Push">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check → Commit → Push
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before continuing, click <strong>Render Book</strong> again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message <strong>Finish HW1 Ex7</strong> and push to GitHub.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Check GitHub">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check GitHub
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Go to your repository on GitHub (GitHub Desktop → Repository menu item → View on GitHub) and make sure that all your commits are there.</p>
+</div>
+</div>
+<p>Congratulation 🎉. You’re done with Homework 1.</p>
+</section>
+<section id="optional-more-challenges" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="optional-more-challenges">Optional: More Challenges</h3>
+<p>If you like to do more, here are some things to think about–this will be different from student to student based on current R experience, post-graduate goals, interests, etc.</p>
+<p>If you are thinking about <strong>communication</strong> including aesthetics:</p>
+<ul>
+<li>Check out other features of Quarto, shown in the Quarto Start up Guide linked at the top of this chapter</li>
+<li>Check out the different <a href="https://quarto.org/docs/output-formats/html-themes.html">themes</a> or ways you might style a Quarto document.</li>
+<li>Check out this gallery of <a href="https://quarto.org/docs/gallery/">Quarto websites (and other documents)</a> and learn how to <a href="https://quarto.org/docs/websites/">build Quarto websites</a> right from RStudio.</li>
+</ul>
+<p>If you are thinking about <strong>data</strong>, there are many places where you can get some. Actually, the World Cup data came from a weekly social data project called TidyTuesday. TidyTuesday is a community of R users from around the globe who share and dig into one different dataset per week then share their results in various channels such as YouTube and social media. Check out the repository of the TidyTuesday datasets at <a href="https://github.com/rfordatascience/tidytuesday" class="uri">https://github.com/rfordatascience/tidytuesday</a>. In the DataSets section, click on the year and then scroll down to a table of datasets posted that year. Pick a dataset of interest, import this into R, and play around! Be creative.</p>
+
+
+<!-- -->
+
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Lisa Lendway is a Mac alum, former Mac prof who helped shape this course, and R/RStudio whiz.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../activities/Exercise_1.html" class="pagination-link" aria-label="Exercise 1">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Exercise 1</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../activities/Exercise_3.html" class="pagination-link" aria-label="Exercise 3 - Univariate Viz">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Exercise 3 - Univariate Viz</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb11" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1"></a><span class="co">---</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="an">title:</span><span class="co"> "Exercise 2 - RStudio Workshop"</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="co">---</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a></span>
+<span id="cb11-8"><a href="#cb11-8"></a><span class="in">```{r}</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a><span class="co">#| include: true</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a><span class="co">#| echo: false</span></span>
+<span id="cb11-11"><a href="#cb11-11"></a><span class="co">#| results: hide</span></span>
+<span id="cb11-12"><a href="#cb11-12"></a><span class="co">#| warning: false</span></span>
+<span id="cb11-13"><a href="#cb11-13"></a><span class="co">#| message: false</span></span>
+<span id="cb11-14"><a href="#cb11-14"></a></span>
+<span id="cb11-15"><a href="#cb11-15"></a><span class="co"># Do NOT modify</span></span>
+<span id="cb11-16"><a href="#cb11-16"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb11-17"><a href="#cb11-17"></a><span class="in">```</span></span>
+<span id="cb11-18"><a href="#cb11-18"></a></span>
+<span id="cb11-19"><a href="#cb11-19"></a><span class="in">```{r List Packages}</span></span>
+<span id="cb11-20"><a href="#cb11-20"></a><span class="in">#| include: true</span></span>
+<span id="cb11-21"><a href="#cb11-21"></a><span class="in">#| echo: false</span></span>
+<span id="cb11-22"><a href="#cb11-22"></a><span class="in">#| results: hide</span></span>
+<span id="cb11-23"><a href="#cb11-23"></a><span class="in">#| warning: false</span></span>
+<span id="cb11-24"><a href="#cb11-24"></a><span class="in">#| message: false</span></span>
+<span id="cb11-25"><a href="#cb11-25"></a></span>
+<span id="cb11-26"><a href="#cb11-26"></a><span class="in"># UPDATE THIS</span></span>
+<span id="cb11-27"><a href="#cb11-27"></a><span class="in">packages &lt;- c("tidyverse")</span></span>
+<span id="cb11-28"><a href="#cb11-28"></a><span class="in">```</span></span>
+<span id="cb11-29"><a href="#cb11-29"></a></span>
+<span id="cb11-30"><a href="#cb11-30"></a><span class="in">```{r Insall Missing Packages}</span></span>
+<span id="cb11-31"><a href="#cb11-31"></a><span class="in">#| include: true</span></span>
+<span id="cb11-32"><a href="#cb11-32"></a><span class="in">#| echo: false</span></span>
+<span id="cb11-33"><a href="#cb11-33"></a><span class="in">#| results: hide</span></span>
+<span id="cb11-34"><a href="#cb11-34"></a><span class="in">#| warning: false</span></span>
+<span id="cb11-35"><a href="#cb11-35"></a><span class="in">#| message: false</span></span>
+<span id="cb11-36"><a href="#cb11-36"></a></span>
+<span id="cb11-37"><a href="#cb11-37"></a><span class="in"># Do NOT modify</span></span>
+<span id="cb11-38"><a href="#cb11-38"></a><span class="in">install.packages(setdiff(packages, rownames(installed.packages())))</span></span>
+<span id="cb11-39"><a href="#cb11-39"></a><span class="in">```</span></span>
+<span id="cb11-40"><a href="#cb11-40"></a></span>
+<span id="cb11-41"><a href="#cb11-41"></a><span class="in">```{r Load Packages}</span></span>
+<span id="cb11-42"><a href="#cb11-42"></a><span class="in">#| include: true</span></span>
+<span id="cb11-43"><a href="#cb11-43"></a><span class="in">#| echo: false</span></span>
+<span id="cb11-44"><a href="#cb11-44"></a><span class="in">#| results: hide</span></span>
+<span id="cb11-45"><a href="#cb11-45"></a><span class="in">#| warning: false</span></span>
+<span id="cb11-46"><a href="#cb11-46"></a><span class="in">#| message: false</span></span>
+<span id="cb11-47"><a href="#cb11-47"></a></span>
+<span id="cb11-48"><a href="#cb11-48"></a><span class="in"># Do NOT modify</span></span>
+<span id="cb11-49"><a href="#cb11-49"></a><span class="in">lapply(packages, require, character.only = TRUE)</span></span>
+<span id="cb11-50"><a href="#cb11-50"></a><span class="in">```</span></span>
+<span id="cb11-51"><a href="#cb11-51"></a></span>
+<span id="cb11-52"><a href="#cb11-52"></a>::: {.callout-caution title="Learning Goals"}</span>
+<span id="cb11-53"><a href="#cb11-53"></a><span class="ss">1.  </span>Getting more familiar with RStudio</span>
+<span id="cb11-54"><a href="#cb11-54"></a><span class="ss">2.  </span>Learn about a reproducible workflow in RStudio</span>
+<span id="cb11-55"><a href="#cb11-55"></a><span class="ss">3.  </span>Work on Homework 1 with your group. The goals of the homework are:</span>
+<span id="cb11-56"><a href="#cb11-56"></a>    a.  Explore tidy data</span>
+<span id="cb11-57"><a href="#cb11-57"></a>    b.  Get familiar with RStudio</span>
+<span id="cb11-58"><a href="#cb11-58"></a>    c. Use Quarto to communicate reproducible document</span>
+<span id="cb11-59"><a href="#cb11-59"></a>:::</span>
+<span id="cb11-60"><a href="#cb11-60"></a></span>
+<span id="cb11-61"><a href="#cb11-61"></a>::: {.callout-note title="Additional Resources"}</span>
+<span id="cb11-62"><a href="#cb11-62"></a>For more information about the topics covered in this chapter, refer to the resources below:</span>
+<span id="cb11-63"><a href="#cb11-63"></a></span>
+<span id="cb11-64"><a href="#cb11-64"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Setting up for success in COMP/STAT 112 (YouTube)</span><span class="co">](https://www.youtube.com/watch?v=0vmY6aDWmgU&amp;list=PLyEH7o09I467e8zck95awweg_bGuLzqjz&amp;index=2)</span> by Lisa Lendway<span class="ot">[^02-rstudio-workshop-1]</span></span>
+<span id="cb11-65"><a href="#cb11-65"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Quarto Cheatsheet (pdf)</span><span class="co">](https://rstudio.github.io/cheatsheets/quarto.pdf)</span></span>
+<span id="cb11-66"><a href="#cb11-66"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Quarto Get Started Guide (html)</span><span class="co">](https://quarto.org/docs/get-started/hello/rstudio.html)</span></span>
+<span id="cb11-67"><a href="#cb11-67"></a>:::</span>
+<span id="cb11-68"><a href="#cb11-68"></a></span>
+<span id="cb11-69"><a href="#cb11-69"></a><span class="ot">[^02-rstudio-workshop-1]: </span>Lisa Lendway is a Mac alum, former Mac prof who helped shape this course, and R/RStudio whiz.</span>
+<span id="cb11-70"><a href="#cb11-70"></a></span>
+<span id="cb11-71"><a href="#cb11-71"></a><span class="fu">## Warm-up</span></span>
+<span id="cb11-72"><a href="#cb11-72"></a></span>
+<span id="cb11-73"><a href="#cb11-73"></a><span class="fu">### Background {.unnumbered}</span></span>
+<span id="cb11-74"><a href="#cb11-74"></a></span>
+<span id="cb11-75"><a href="#cb11-75"></a><span class="fu">#### What's the point of this course? {.unnumbered}</span></span>
+<span id="cb11-76"><a href="#cb11-76"></a></span>
+<span id="cb11-77"><a href="#cb11-77"></a>Build knowledge from data within a particular domain of inquiry, and particular contexts.</span>
+<span id="cb11-78"><a href="#cb11-78"></a></span>
+<span id="cb11-79"><a href="#cb11-79"></a><span class="fu">#### Why will we use R/RStudio as a tool in this course? {.unnumbered}</span></span>
+<span id="cb11-80"><a href="#cb11-80"></a></span>
+<span id="cb11-81"><a href="#cb11-81"></a><span class="ss">-   </span>It's open access, ie, free!</span>
+<span id="cb11-82"><a href="#cb11-82"></a><span class="ss">-   </span>It's open source, ie, anyone can contribute to its development</span>
+<span id="cb11-83"><a href="#cb11-83"></a><span class="ss">-   </span>It's used broadly--here are some examples where R is used:</span>
+<span id="cb11-84"><a href="#cb11-84"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Logan Pratico</span><span class="co">](https://www.youtube.com/watch?v=k6hD-Fagboc&amp;list=PL9HYL-VRX0oRFZslRGHwHuwea7SvAATHp&amp;index=8)</span>: making "eviction data accessible to the legal aid community"</span>
+<span id="cb11-85"><a href="#cb11-85"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Ahmadou Dicko</span><span class="co">](https://www.rstudio.com/resources/rstudioglobal-2021/humanitarian-data-science-with-r/)</span>: humanitarians creating "life saving data products"</span>
+<span id="cb11-86"><a href="#cb11-86"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Shelmith Kariuki</span><span class="co">](https://www.rstudio.com/resources/rstudioglobal-2021/rkenyacensus-package/)</span>: Kenyan government census</span>
+<span id="cb11-87"><a href="#cb11-87"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Laura DeCicco</span><span class="co">](https://www.youtube.com/watch?v=w4roQNlPAkU&amp;list=PL9HYL-VRX0oRFZslRGHwHuwea7SvAATHp&amp;index=25)</span>: U.S. Geological Survey (USGS) discovery and retrieval of hydrologic data</span>
+<span id="cb11-88"><a href="#cb11-88"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Nick Snellgrove &amp; Uli Muellner</span><span class="co">](https://www.youtube.com/watch?v=iFXslnnxqYk&amp;list=PL9HYL-VRX0oRFZslRGHwHuwea7SvAATHp&amp;index=9)</span>: studying aquatic invasive species in MN</span>
+<span id="cb11-89"><a href="#cb11-89"></a></span>
+<span id="cb11-90"><a href="#cb11-90"></a><span class="fu">#### RStudio Layout {.unnumbered}</span></span>
+<span id="cb11-91"><a href="#cb11-91"></a></span>
+<span id="cb11-92"><a href="#cb11-92"></a>Below is a screenshot of the default layout for RStudio.</span>
+<span id="cb11-93"><a href="#cb11-93"></a></span>
+<span id="cb11-94"><a href="#cb11-94"></a><span class="fu">#### Console {.unnumbered}</span></span>
+<span id="cb11-95"><a href="#cb11-95"></a></span>
+<span id="cb11-96"><a href="#cb11-96"></a>Last class, we spent most of our time in the console. However,</span>
+<span id="cb11-97"><a href="#cb11-97"></a></span>
+<span id="cb11-98"><a href="#cb11-98"></a>| Console is good for... | Console is bad for most everything else, including... |</span>
+<span id="cb11-99"><a href="#cb11-99"></a>|:-----------------------|:----------------------------------------------|</span>
+<span id="cb11-100"><a href="#cb11-100"></a>| quick calculations     | documenting our work                                  |</span>
+<span id="cb11-101"><a href="#cb11-101"></a>| trying out code        | editing our work                                      |</span>
+<span id="cb11-102"><a href="#cb11-102"></a>| pulling up help files  | communicating our work                                |</span>
+<span id="cb11-103"><a href="#cb11-103"></a>|                        | being able to *reproduce* our work                    |</span>
+<span id="cb11-104"><a href="#cb11-104"></a></span>
+<span id="cb11-105"><a href="#cb11-105"></a><span class="fu">### Quarto {.unnumbered}</span></span>
+<span id="cb11-106"><a href="#cb11-106"></a></span>
+<span id="cb11-107"><a href="#cb11-107"></a><span class="fu">#### Reproducibility with Quarto {.unnumbered}</span></span>
+<span id="cb11-108"><a href="#cb11-108"></a></span>
+<span id="cb11-109"><a href="#cb11-109"></a>It's important to document and communicate every step in the data analysis process, e.g. data collection, cleaning, and analysis, so that others and ourselves can *reproduce* and hence *verify* and *build upon* our work.</span>
+<span id="cb11-110"><a href="#cb11-110"></a></span>
+<span id="cb11-111"><a href="#cb11-111"></a>RStudio includes tools for creating reproducible and lovely documents, webpages, books (like this online manual!), etc that allow us to interleave text, code, output, images, tables, etc. Quarto is integrated into RStudio and if you've used R Markdown, it looks very similar.</span>
+<span id="cb11-112"><a href="#cb11-112"></a></span>
+<span id="cb11-113"><a href="#cb11-113"></a>::: {.callout-note title="Quarto"}</span>
+<span id="cb11-114"><a href="#cb11-114"></a>Quarto is an technology that incorporates code from many programming languages such as R along with styled text (headers, bold, italics, links, etc.) using markdown.</span>
+<span id="cb11-115"><a href="#cb11-115"></a>:::</span>
+<span id="cb11-116"><a href="#cb11-116"></a></span>
+<span id="cb11-117"><a href="#cb11-117"></a><span class="fu">#### Quarto Example {.unnumbered}</span></span>
+<span id="cb11-118"><a href="#cb11-118"></a></span>
+<span id="cb11-119"><a href="#cb11-119"></a>Download then move <span class="co">[</span><span class="ot">this Quarto document</span><span class="co">](../student_notes/quarto-demo.qmd)</span> into the activities folder of your portfolio project and do not forgot to include it in <span class="in">`_quarto.yml`</span> file. Open the Quarto document in RStudio and follow the prompts therein. Note that this document explores the basics. We'll pick up more details as we go, often by making and learning from mistakes. The Quarto cheatsheets linked at the top of this chapter presents more features of Quarto.</span>
+<span id="cb11-120"><a href="#cb11-120"></a></span>
+<span id="cb11-121"><a href="#cb11-121"></a><span class="fu">### Important Tips {.unnumbered}</span></span>
+<span id="cb11-122"><a href="#cb11-122"></a></span>
+<span id="cb11-123"><a href="#cb11-123"></a><span class="fu">#### Quarto Files (.qmd) vs Console {.unnumbered}</span></span>
+<span id="cb11-124"><a href="#cb11-124"></a></span>
+<span id="cb11-125"><a href="#cb11-125"></a><span class="ss">-   </span>The console does *not* communicate with Quarto. Things you define or type in the console are NOT defined, stored, or run in the .qmd.</span>
+<span id="cb11-126"><a href="#cb11-126"></a></span>
+<span id="cb11-127"><a href="#cb11-127"></a><span class="ss">-   </span>Quarto *can* communicate with the console, but only if you tell it to.</span>
+<span id="cb11-128"><a href="#cb11-128"></a></span>
+<span id="cb11-129"><a href="#cb11-129"></a><span class="ss">    -   </span>IT WILL: if you run a chunk inside your .qmd (by clicking the green arrow), it is also run and stored in the console.</span>
+<span id="cb11-130"><a href="#cb11-130"></a><span class="ss">    -   </span>IT WON'T: if you render your .qmd to html but do not also run the chunks inside the .qmd, the results will be displayed in the html but *not* run or stored in the console.</span>
+<span id="cb11-131"><a href="#cb11-131"></a></span>
+<span id="cb11-132"><a href="#cb11-132"></a><span class="fu">#### Comments {.unnumbered}</span></span>
+<span id="cb11-133"><a href="#cb11-133"></a></span>
+<span id="cb11-134"><a href="#cb11-134"></a>Leaving short notes (known as comments) about what our code is doing is an important aspect of communication. It reminds our future selves, and communicates to others, what our thought and code process was. Hence comments are important to reproducibility. In the R chunks, comments are proceeded by a pound sign: <span class="in">`# This is an example comment`</span>.</span>
+<span id="cb11-135"><a href="#cb11-135"></a></span>
+<span id="cb11-136"><a href="#cb11-136"></a>::: {#fig-comments layout-ncol="2"}</span>
+<span id="cb11-137"><a href="#cb11-137"></a><span class="al">![](../images/uncommented_code_meme_2.png)</span>{#fig-cat-comment}</span>
+<span id="cb11-138"><a href="#cb11-138"></a></span>
+<span id="cb11-139"><a href="#cb11-139"></a><span class="al">![](../images/uncommented_code_meme_1.png)</span>{#fig-wizard-comment}</span>
+<span id="cb11-140"><a href="#cb11-140"></a></span>
+<span id="cb11-141"><a href="#cb11-141"></a>Left: Leaving comments can feel silly in the moment <span class="co">[</span><span class="ot">(Reddit source)</span><span class="co">](https://www.reddit.com/r/ProgrammerHumor/comments/8w54mx/code_comments_be_like/)</span>. Right: But your future self and others will thank you <span class="co">[</span><span class="ot">(quickmeme source)</span><span class="co">](http://www.quickmeme.com/meme/3r25zh)</span>.</span>
+<span id="cb11-142"><a href="#cb11-142"></a>:::</span>
+<span id="cb11-143"><a href="#cb11-143"></a></span>
+<span id="cb11-144"><a href="#cb11-144"></a><span class="fu">#### Styling Guides {.unnumbered}</span></span>
+<span id="cb11-145"><a href="#cb11-145"></a></span>
+<span id="cb11-146"><a href="#cb11-146"></a>All of this emphasis on communication is not specific to this class, it is a general expectation. Further, the code structure we'll use this semester reflects *common* practice, but not the *only* practice. Various companies / entities have their own R "style guides". Below are two examples of such styling guides.</span>
+<span id="cb11-147"><a href="#cb11-147"></a></span>
+<span id="cb11-148"><a href="#cb11-148"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">tidyverse style guide</span><span class="co">](https://style.tidyverse.org/)</span></span>
+<span id="cb11-149"><a href="#cb11-149"></a><span class="ss">    -   </span>R developers like using the snake_case when naming variables</span>
+<span id="cb11-150"><a href="#cb11-150"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Google’s R Style Guide</span><span class="co">](https://google.github.io/styleguide/Rguide.html)</span></span>
+<span id="cb11-151"><a href="#cb11-151"></a><span class="ss">    -   </span>Google on the other hand recommends using the camelCase when naming variables</span>
+<span id="cb11-152"><a href="#cb11-152"></a></span>
+<span id="cb11-153"><a href="#cb11-153"></a><span class="fu">## Homework 1</span></span>
+<span id="cb11-154"><a href="#cb11-154"></a></span>
+<span id="cb11-155"><a href="#cb11-155"></a></span>
+<span id="cb11-156"><a href="#cb11-156"></a>::: {.callout-important title="Instructions, Reminder"}</span>
+<span id="cb11-157"><a href="#cb11-157"></a><span class="ss">-   </span>The following exercises will be due as homework 1.</span>
+<span id="cb11-158"><a href="#cb11-158"></a><span class="ss">-   </span>You should work on these exercises in groups, but write up your own work.</span>
+<span id="cb11-159"><a href="#cb11-159"></a>:::</span>
+<span id="cb11-160"><a href="#cb11-160"></a></span>
+<span id="cb11-161"><a href="#cb11-161"></a><span class="fu">### Getting Started {.unnumbered}</span></span>
+<span id="cb11-162"><a href="#cb11-162"></a></span>
+<span id="cb11-163"><a href="#cb11-163"></a>For most homeworks and in-class activities, you will be provided with a Quarto (.qmd) template. However, it's also important to practice starting your *own* Quarto .qmd from scratch. You'll do that here.</span>
+<span id="cb11-164"><a href="#cb11-164"></a></span>
+<span id="cb11-165"><a href="#cb11-165"></a>::: {.callout-important title="Instructions"}</span>
+<span id="cb11-166"><a href="#cb11-166"></a>Before starting the exercises, take the following steps:</span>
+<span id="cb11-167"><a href="#cb11-167"></a></span>
+<span id="cb11-168"><a href="#cb11-168"></a><span class="ss">-   </span>Follow the instructions on <span class="co">[</span><span class="ot">Appendix: Submitting Homeworks</span><span class="co">](99-appendix3.qmd)</span> to create your homework repository</span>
+<span id="cb11-169"><a href="#cb11-169"></a></span>
+<span id="cb11-170"><a href="#cb11-170"></a><span class="ss">-   </span>In the **homeworks** folder of your cloned repository, create a new Quarto (.qmd) file: File window in the lower-right corner --<span class="sc">\&gt;</span> Add New File (second icon from the left) --<span class="sc">\&gt;</span> Quarto Doc... --<span class="sc">\&gt;</span> name it <span class="in">`homework_01.qmd`</span></span>
+<span id="cb11-171"><a href="#cb11-171"></a></span>
+<span id="cb11-172"><a href="#cb11-172"></a><span class="ss">-   </span>Edit the<span class="in">`_quarto.yml`</span> file to include the document</span>
+<span id="cb11-173"><a href="#cb11-173"></a></span>
+<span id="cb11-174"><a href="#cb11-174"></a><span class="ss">-   </span>In the newly created document, add the following YAML header at the top. The YAML option <span class="in">`number-sections`</span> will prevent numbering the headers of the documents.</span>
+<span id="cb11-175"><a href="#cb11-175"></a></span>
+<span id="cb11-176"><a href="#cb11-176"></a>    <span class="in">``` yaml</span></span>
+<span id="cb11-177"><a href="#cb11-177"></a><span class="at">    </span>---</span>
+<span id="cb11-178"><a href="#cb11-178"></a><span class="at">    </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Homework 1"</span></span>
+<span id="cb11-179"><a href="#cb11-179"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb11-180"><a href="#cb11-180"></a><span class="at">    </span>---</span>
+<span id="cb11-181"><a href="#cb11-181"></a><span class="at">    </span><span class="in">```</span></span>
+<span id="cb11-182"><a href="#cb11-182"></a></span>
+<span id="cb11-183"><a href="#cb11-183"></a><span class="ss">-   </span>Below the yaml header, add section headers for each homework exercise as follows:</span>
+<span id="cb11-184"><a href="#cb11-184"></a></span>
+<span id="cb11-185"><a href="#cb11-185"></a>    <span class="in">``` markdown</span></span>
+<span id="cb11-186"><a href="#cb11-186"></a>    ## Exercise 1: Warming up</span>
+<span id="cb11-187"><a href="#cb11-187"></a></span>
+<span id="cb11-188"><a href="#cb11-188"></a></span>
+<span id="cb11-189"><a href="#cb11-189"></a><span class="in">    ## Exercise 2: Import tidy data</span></span>
+<span id="cb11-190"><a href="#cb11-190"></a></span>
+<span id="cb11-191"><a href="#cb11-191"></a></span>
+<span id="cb11-192"><a href="#cb11-192"></a><span class="in">    ## Exercise 3: Tidy data properties</span></span>
+<span id="cb11-193"><a href="#cb11-193"></a></span>
+<span id="cb11-194"><a href="#cb11-194"></a></span>
+<span id="cb11-195"><a href="#cb11-195"></a><span class="in">    ## Exercise 4: Get to know the data</span></span>
+<span id="cb11-196"><a href="#cb11-196"></a></span>
+<span id="cb11-197"><a href="#cb11-197"></a></span>
+<span id="cb11-198"><a href="#cb11-198"></a><span class="in">    ## Exercise 5: Data structure</span></span>
+<span id="cb11-199"><a href="#cb11-199"></a></span>
+<span id="cb11-200"><a href="#cb11-200"></a></span>
+<span id="cb11-201"><a href="#cb11-201"></a><span class="in">    ## Exercise 6: Your turn</span></span>
+<span id="cb11-202"><a href="#cb11-202"></a></span>
+<span id="cb11-203"><a href="#cb11-203"></a></span>
+<span id="cb11-204"><a href="#cb11-204"></a><span class="in">    ## Exercise 7: Brainstorm</span></span>
+<span id="cb11-205"><a href="#cb11-205"></a><span class="in">    ```</span></span>
+<span id="cb11-206"><a href="#cb11-206"></a></span>
+<span id="cb11-207"><a href="#cb11-207"></a><span class="ss">-   </span>Render the book to html by clicking **Render Book** button in the **Build** located in the upper-right section.</span>
+<span id="cb11-208"><a href="#cb11-208"></a></span>
+<span id="cb11-209"><a href="#cb11-209"></a><span class="ss">-   </span>Put your answers to each exercise under the appropriate <span class="in">`# Exercise`</span> section. **You do not need to write out the question/prompt itself.**</span>
+<span id="cb11-210"><a href="#cb11-210"></a>:::</span>
+<span id="cb11-211"><a href="#cb11-211"></a></span>
+<span id="cb11-212"><a href="#cb11-212"></a><span class="fu">### Exercise 1: Warming Up {.unnumbered}</span></span>
+<span id="cb11-213"><a href="#cb11-213"></a></span>
+<span id="cb11-214"><a href="#cb11-214"></a><span class="ss">-   </span>Write 1 sentence about one of your favorite foods at Cafe Mac. Make sure to include an *italicized* word and a **bold** word.</span>
+<span id="cb11-215"><a href="#cb11-215"></a><span class="ss">-   </span>Show a .png image of the food from the web. In Google, you can add <span class="in">`filetype:png`</span> to the beginning of your search term, click on the photo you want, and copy the image address.</span>
+<span id="cb11-216"><a href="#cb11-216"></a></span>
+<span id="cb11-217"><a href="#cb11-217"></a>::: {.callout-warning title="Check → Commit → Push"}</span>
+<span id="cb11-218"><a href="#cb11-218"></a>Before continuing, click **Render Book** again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message **Finish HW1 Ex1** and push to GitHub.</span>
+<span id="cb11-219"><a href="#cb11-219"></a>:::</span>
+<span id="cb11-220"><a href="#cb11-220"></a></span>
+<span id="cb11-221"><a href="#cb11-221"></a><span class="fu">### Exercise 2: Import Tidy Data {.unnumbered}</span></span>
+<span id="cb11-222"><a href="#cb11-222"></a></span>
+<span id="cb11-223"><a href="#cb11-223"></a>A quick survey was filled before class. So, let's work with this data. The first step to working with data in RStudio is getting it in there which depends on:</span>
+<span id="cb11-224"><a href="#cb11-224"></a></span>
+<span id="cb11-225"><a href="#cb11-225"></a><span class="ss">-   </span>file format, eg, <span class="in">`.xls`</span> (Excel spreadsheet), <span class="in">`.csv`</span>, or <span class="in">`.txt`</span></span>
+<span id="cb11-226"><a href="#cb11-226"></a><span class="ss">-   </span>storage locations, eg, online, on your desktop, or built into RStudio itself.</span>
+<span id="cb11-227"><a href="#cb11-227"></a></span>
+<span id="cb11-228"><a href="#cb11-228"></a>Our data is stored as a **.csv** file **online**. Within a new R chunk, import and store this data as <span class="in">`survey`</span>. Take note of the function name and the argument it takes.</span>
+<span id="cb11-229"><a href="#cb11-229"></a></span>
+<span id="cb11-232"><a href="#cb11-232"></a><span class="in">```{r}</span></span>
+<span id="cb11-233"><a href="#cb11-233"></a><span class="co">#| eval: false</span></span>
+<span id="cb11-234"><a href="#cb11-234"></a></span>
+<span id="cb11-235"><a href="#cb11-235"></a><span class="co"># Import the data</span></span>
+<span id="cb11-236"><a href="#cb11-236"></a>survey <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://mac-stat.github.io/data/112_fall_2024_survey.csv"</span>)</span>
+<span id="cb11-237"><a href="#cb11-237"></a><span class="in">```</span></span>
+<span id="cb11-238"><a href="#cb11-238"></a></span>
+<span id="cb11-239"><a href="#cb11-239"></a>Note that nothing new appears in your document after you import the data. This is because we *stored*, but didn't print, the data. Actually, we don't *want* to print the data in our .qmd file--it would be too messy.</span>
+<span id="cb11-240"><a href="#cb11-240"></a></span>
+<span id="cb11-241"><a href="#cb11-241"></a>There are 2 quick ways to check out the entire data table to get a sense of its structure and contents:</span>
+<span id="cb11-242"><a href="#cb11-242"></a></span>
+<span id="cb11-243"><a href="#cb11-243"></a><span class="ss">1.  </span>Type <span class="in">`View(survey)`</span> in the **console**.</span>
+<span id="cb11-244"><a href="#cb11-244"></a><span class="ss">2.  </span>In the Environment tab (upper right pane), click on <span class="in">`survey`</span>.</span>
+<span id="cb11-245"><a href="#cb11-245"></a></span>
+<span id="cb11-246"><a href="#cb11-246"></a>::: {.callout-warning title="Check → Commit → Push"}</span>
+<span id="cb11-247"><a href="#cb11-247"></a>Before continuing, click **Render Book** again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message **Finish HW1 Ex2** and push to GitHub.</span>
+<span id="cb11-248"><a href="#cb11-248"></a>:::</span>
+<span id="cb11-249"><a href="#cb11-249"></a></span>
+<span id="cb11-250"><a href="#cb11-250"></a><span class="fu">### Exercise 3: Tidy Data Properties {.unnumbered}</span></span>
+<span id="cb11-251"><a href="#cb11-251"></a></span>
+<span id="cb11-252"><a href="#cb11-252"></a>Answers the following prompts in a bulleted list in the order they're presented.</span>
+<span id="cb11-253"><a href="#cb11-253"></a></span>
+<span id="cb11-254"><a href="#cb11-254"></a><span class="ss">-   </span>What are the units of observation, ie, what does each row represent?</span>
+<span id="cb11-255"><a href="#cb11-255"></a><span class="ss">-   </span>Name one *quantitative* variable, ie, column, in the dataset.</span>
+<span id="cb11-256"><a href="#cb11-256"></a><span class="ss">-   </span>Name one *categorical* variable, ie, column, in the dataset.</span>
+<span id="cb11-257"><a href="#cb11-257"></a></span>
+<span id="cb11-258"><a href="#cb11-258"></a>::: {.callout-tip title="Creating Bulleted List"}</span>
+<span id="cb11-259"><a href="#cb11-259"></a>To create a bulleted list, use <span class="in">`-`</span> in front of each item and make sure to leave an empty line before the list.</span>
+<span id="cb11-260"><a href="#cb11-260"></a>:::</span>
+<span id="cb11-261"><a href="#cb11-261"></a></span>
+<span id="cb11-262"><a href="#cb11-262"></a>::: {.callout-warning title="Check → Commit → Push"}</span>
+<span id="cb11-263"><a href="#cb11-263"></a>Before continuing, click **Render Book** again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message **Finish HW1 Ex3** and push to GitHub.</span>
+<span id="cb11-264"><a href="#cb11-264"></a>:::</span>
+<span id="cb11-265"><a href="#cb11-265"></a></span>
+<span id="cb11-266"><a href="#cb11-266"></a><span class="fu">### Exercise 4: Know the Data {.unnumbered}</span></span>
+<span id="cb11-267"><a href="#cb11-267"></a></span>
+<span id="cb11-268"><a href="#cb11-268"></a>Before we can learn anything from our data, we must understand its structure. For each function below, try out *one at a time* then write a *short* comment/note about what the function does in the indicated places. To make for easier recall later, try to connect your comment on what the function *does* to how it's *named*.</span>
+<span id="cb11-269"><a href="#cb11-269"></a></span>
+<span id="cb11-272"><a href="#cb11-272"></a><span class="in">```{r}</span></span>
+<span id="cb11-273"><a href="#cb11-273"></a><span class="co">#| eval: false</span></span>
+<span id="cb11-274"><a href="#cb11-274"></a></span>
+<span id="cb11-275"><a href="#cb11-275"></a><span class="co"># Replace this with a comment on what dim() does</span></span>
+<span id="cb11-276"><a href="#cb11-276"></a><span class="fu">dim</span>(survey)</span>
+<span id="cb11-277"><a href="#cb11-277"></a></span>
+<span id="cb11-278"><a href="#cb11-278"></a><span class="co"># Replace this with a comment on what nrow() does</span></span>
+<span id="cb11-279"><a href="#cb11-279"></a><span class="fu">nrow</span>(survey)</span>
+<span id="cb11-280"><a href="#cb11-280"></a></span>
+<span id="cb11-281"><a href="#cb11-281"></a><span class="co"># Replace this with a comment on what head() does</span></span>
+<span id="cb11-282"><a href="#cb11-282"></a><span class="fu">head</span>(survey)</span>
+<span id="cb11-283"><a href="#cb11-283"></a></span>
+<span id="cb11-284"><a href="#cb11-284"></a><span class="co"># Replace this with a comment on what head(___, 3) does</span></span>
+<span id="cb11-285"><a href="#cb11-285"></a><span class="fu">head</span>(survey, <span class="dv">3</span>)</span>
+<span id="cb11-286"><a href="#cb11-286"></a></span>
+<span id="cb11-287"><a href="#cb11-287"></a><span class="co"># Replace this with a comment on what tail() does</span></span>
+<span id="cb11-288"><a href="#cb11-288"></a><span class="fu">tail</span>(survey)</span>
+<span id="cb11-289"><a href="#cb11-289"></a></span>
+<span id="cb11-290"><a href="#cb11-290"></a><span class="co"># Replace this with a comment on what names() does</span></span>
+<span id="cb11-291"><a href="#cb11-291"></a><span class="fu">names</span>(survey)</span>
+<span id="cb11-292"><a href="#cb11-292"></a><span class="in">```</span></span>
+<span id="cb11-293"><a href="#cb11-293"></a></span>
+<span id="cb11-294"><a href="#cb11-294"></a>::: {.callout-warning title="Check → Commit → Push"}</span>
+<span id="cb11-295"><a href="#cb11-295"></a>Before continuing, click **Render Book** again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message **Finish HW1 Ex4** and push to GitHub.</span>
+<span id="cb11-296"><a href="#cb11-296"></a>:::</span>
+<span id="cb11-297"><a href="#cb11-297"></a></span>
+<span id="cb11-298"><a href="#cb11-298"></a><span class="fu">### Exercise 5: Data Structure {.unnumbered}</span></span>
+<span id="cb11-299"><a href="#cb11-299"></a></span>
+<span id="cb11-300"><a href="#cb11-300"></a>It's important that we understand the different types or structures of the **objects** we store. Having such information will inform what types of analyses are appropriate and the appropriate R code for these analyses. The <span class="in">`class()`</span> function is important here. The example below shows how it can be used and what output it produces.</span>
+<span id="cb11-301"><a href="#cb11-301"></a></span>
+<span id="cb11-304"><a href="#cb11-304"></a><span class="in">```{r}</span></span>
+<span id="cb11-305"><a href="#cb11-305"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb11-306"><a href="#cb11-306"></a><span class="fu">class</span>(x)</span>
+<span id="cb11-307"><a href="#cb11-307"></a></span>
+<span id="cb11-308"><a href="#cb11-308"></a>y <span class="ot">&lt;-</span> <span class="st">"pizza"</span></span>
+<span id="cb11-309"><a href="#cb11-309"></a><span class="fu">class</span>(y)</span>
+<span id="cb11-310"><a href="#cb11-310"></a><span class="in">```</span></span>
+<span id="cb11-311"><a href="#cb11-311"></a></span>
+<span id="cb11-312"><a href="#cb11-312"></a>There are various object classes, including:</span>
+<span id="cb11-313"><a href="#cb11-313"></a></span>
+<span id="cb11-314"><a href="#cb11-314"></a><span class="ss">-   </span><span class="in">`num`</span> or <span class="in">`numeric`</span></span>
+<span id="cb11-315"><a href="#cb11-315"></a><span class="ss">-   </span><span class="in">`int`</span> or <span class="in">`integer`</span></span>
+<span id="cb11-316"><a href="#cb11-316"></a><span class="ss">-   </span><span class="in">`chr`</span> or <span class="in">`character`</span></span>
+<span id="cb11-317"><a href="#cb11-317"></a><span class="ss">-   </span><span class="in">`factor`</span>, and</span>
+<span id="cb11-318"><a href="#cb11-318"></a><span class="ss">-   </span><span class="in">`data.frame`</span>.</span>
+<span id="cb11-319"><a href="#cb11-319"></a></span>
+<span id="cb11-320"><a href="#cb11-320"></a>Complete the chunk below to explore the classes/structure of our <span class="in">`survey`</span> data and the variables within the <span class="in">`survey`</span> data:</span>
+<span id="cb11-321"><a href="#cb11-321"></a></span>
+<span id="cb11-324"><a href="#cb11-324"></a><span class="in">```{r}</span></span>
+<span id="cb11-325"><a href="#cb11-325"></a><span class="co">#| eval: false</span></span>
+<span id="cb11-326"><a href="#cb11-326"></a></span>
+<span id="cb11-327"><a href="#cb11-327"></a><span class="co"># Obtain the overall class of the survey object</span></span>
+<span id="cb11-328"><a href="#cb11-328"></a></span>
+<span id="cb11-329"><a href="#cb11-329"></a></span>
+<span id="cb11-330"><a href="#cb11-330"></a><span class="co"># Examine the structure of each variable within survey (including class)</span></span>
+<span id="cb11-331"><a href="#cb11-331"></a><span class="co"># Just take note of what information we gain here (no need to write more)</span></span>
+<span id="cb11-332"><a href="#cb11-332"></a><span class="fu">str</span>(survey)</span>
+<span id="cb11-333"><a href="#cb11-333"></a><span class="in">```</span></span>
+<span id="cb11-334"><a href="#cb11-334"></a></span>
+<span id="cb11-335"><a href="#cb11-335"></a>::: {.callout-warning title="Check → Commit → Push"}</span>
+<span id="cb11-336"><a href="#cb11-336"></a>Before continuing, click **Render Book** again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message **Finish HW1 Ex5** and push to GitHub.</span>
+<span id="cb11-337"><a href="#cb11-337"></a>:::</span>
+<span id="cb11-338"><a href="#cb11-338"></a></span>
+<span id="cb11-339"><a href="#cb11-339"></a><span class="fu">### Exercise 6: Your turn {.unnumbered}</span></span>
+<span id="cb11-340"><a href="#cb11-340"></a></span>
+<span id="cb11-341"><a href="#cb11-341"></a>Let's practice these same ideas using data on World Cup football/soccer found on:</span>
+<span id="cb11-342"><a href="#cb11-342"></a></span>
+<span id="cb11-343"><a href="#cb11-343"></a><span class="in">`https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-11-29/worldcups.csv`</span></span>
+<span id="cb11-344"><a href="#cb11-344"></a></span>
+<span id="cb11-345"><a href="#cb11-345"></a>Data is only useful if we know what it's measuring! You can find a **codebook**, i.e. document that describes the data, <span class="co">[</span><span class="ot">here</span><span class="co">](https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-11-29)</span>. Address each prompt below using R functions. Include both the <span class="in">`#`</span> prompt and your code in the chunk.</span>
+<span id="cb11-346"><a href="#cb11-346"></a></span>
+<span id="cb11-349"><a href="#cb11-349"></a><span class="in">```{r}</span></span>
+<span id="cb11-350"><a href="#cb11-350"></a><span class="co">#| eval: false</span></span>
+<span id="cb11-351"><a href="#cb11-351"></a></span>
+<span id="cb11-352"><a href="#cb11-352"></a><span class="co"># Import and name the dataset (you pick a name!)</span></span>
+<span id="cb11-353"><a href="#cb11-353"></a></span>
+<span id="cb11-354"><a href="#cb11-354"></a></span>
+<span id="cb11-355"><a href="#cb11-355"></a><span class="co"># Print the first 6 rows of the dataset</span></span>
+<span id="cb11-356"><a href="#cb11-356"></a></span>
+<span id="cb11-357"><a href="#cb11-357"></a></span>
+<span id="cb11-358"><a href="#cb11-358"></a><span class="co"># How many years of data do we have? And how many measurements do we have on each year?</span></span>
+<span id="cb11-359"><a href="#cb11-359"></a></span>
+<span id="cb11-360"><a href="#cb11-360"></a></span>
+<span id="cb11-361"><a href="#cb11-361"></a><span class="co"># Get a list of all variable names in the dataset</span></span>
+<span id="cb11-362"><a href="#cb11-362"></a></span>
+<span id="cb11-363"><a href="#cb11-363"></a></span>
+<span id="cb11-364"><a href="#cb11-364"></a><span class="co"># Display the class and other information for each variable in the dataset</span></span>
+<span id="cb11-365"><a href="#cb11-365"></a></span>
+<span id="cb11-366"><a href="#cb11-366"></a></span>
+<span id="cb11-367"><a href="#cb11-367"></a></span>
+<span id="cb11-368"><a href="#cb11-368"></a><span class="in">```</span></span>
+<span id="cb11-369"><a href="#cb11-369"></a></span>
+<span id="cb11-370"><a href="#cb11-370"></a>::: {.callout-warning title="Check → Commit → Push"}</span>
+<span id="cb11-371"><a href="#cb11-371"></a>Before continuing, click **Render Book** again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message **Finish HW1 Ex6** and push to GitHub.</span>
+<span id="cb11-372"><a href="#cb11-372"></a>:::</span>
+<span id="cb11-373"><a href="#cb11-373"></a></span>
+<span id="cb11-374"><a href="#cb11-374"></a><span class="fu">### Exercise 7: Brainstorm {.unnumbered}</span></span>
+<span id="cb11-375"><a href="#cb11-375"></a></span>
+<span id="cb11-376"><a href="#cb11-376"></a>We've just scratched the surface. In a bulleted list (<span class="in">`-`</span>), write out 3 questions about the World Cup that we might answer using these data. Be creative. The questions don't have to be questions we've learned how to answer yet.</span>
+<span id="cb11-377"><a href="#cb11-377"></a></span>
+<span id="cb11-378"><a href="#cb11-378"></a>::: {.callout-warning title="Check → Commit → Push"}</span>
+<span id="cb11-379"><a href="#cb11-379"></a>Before continuing, click **Render Book** again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message **Finish HW1 Ex7** and push to GitHub.</span>
+<span id="cb11-380"><a href="#cb11-380"></a>:::</span>
+<span id="cb11-381"><a href="#cb11-381"></a></span>
+<span id="cb11-382"><a href="#cb11-382"></a>::: {.callout-warning title="Check GitHub"}</span>
+<span id="cb11-383"><a href="#cb11-383"></a>Go to your repository on GitHub (GitHub Desktop → Repository menu item → View on GitHub) and make sure that all your commits are there.</span>
+<span id="cb11-384"><a href="#cb11-384"></a>:::</span>
+<span id="cb11-385"><a href="#cb11-385"></a></span>
+<span id="cb11-386"><a href="#cb11-386"></a>Congratulation 🎉. You're done with Homework 1.</span>
+<span id="cb11-387"><a href="#cb11-387"></a></span>
+<span id="cb11-388"><a href="#cb11-388"></a><span class="fu">### Optional: More Challenges {.unnumbered}</span></span>
+<span id="cb11-389"><a href="#cb11-389"></a></span>
+<span id="cb11-390"><a href="#cb11-390"></a>If you like to do more, here are some things to think about--this will be different from student to student based on current R experience, post-graduate goals, interests, etc.</span>
+<span id="cb11-391"><a href="#cb11-391"></a></span>
+<span id="cb11-392"><a href="#cb11-392"></a>If you are thinking about **communication** including aesthetics:</span>
+<span id="cb11-393"><a href="#cb11-393"></a></span>
+<span id="cb11-394"><a href="#cb11-394"></a><span class="ss">-   </span>Check out other features of Quarto, shown in the Quarto Start up Guide linked at the top of this chapter</span>
+<span id="cb11-395"><a href="#cb11-395"></a><span class="ss">-   </span>Check out the different <span class="co">[</span><span class="ot">themes</span><span class="co">](https://quarto.org/docs/output-formats/html-themes.html)</span> or ways you might style a Quarto document.</span>
+<span id="cb11-396"><a href="#cb11-396"></a><span class="ss">-   </span>Check out this gallery of <span class="co">[</span><span class="ot">Quarto websites (and other documents)</span><span class="co">](https://quarto.org/docs/gallery/)</span> and learn how to <span class="co">[</span><span class="ot">build Quarto websites</span><span class="co">](https://quarto.org/docs/websites/)</span> right from RStudio.</span>
+<span id="cb11-397"><a href="#cb11-397"></a></span>
+<span id="cb11-398"><a href="#cb11-398"></a>If you are thinking about **data**, there are many places where you can get some. Actually, the World Cup data came from a weekly social data project called TidyTuesday. TidyTuesday is a community of R users from around the globe who share and dig into one different dataset per week then share their results in various channels such as YouTube and social media. Check out the repository of the TidyTuesday datasets at <span class="ot">&lt;https://github.com/rfordatascience/tidytuesday&gt;</span>. In the DataSets section, click on the year and then scroll down to a table of datasets posted that year. Pick a dataset of interest, import this into R, and play around! Be creative.</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

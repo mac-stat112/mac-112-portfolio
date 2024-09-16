@@ -1,0 +1,386 @@
+---
+title: "Exercise 2 - RStudio Workshop"
+number-sections: true
+---
+
+```{r}
+#| include: true
+#| echo: false
+#| results: hide
+#| warning: false
+#| message: false
+
+# Do NOT modify
+rm(list = ls())
+```
+
+```{r List Packages}
+#| include: true
+#| echo: false
+#| results: hide
+#| warning: false
+#| message: false
+
+# UPDATE THIS
+packages <- c("tidyverse")
+```
+
+```{r Insall Missing Packages}
+#| include: true
+#| echo: false
+#| results: hide
+#| warning: false
+#| message: false
+
+# Do NOT modify
+install.packages(setdiff(packages, rownames(installed.packages())))
+```
+
+```{r Load Packages}
+#| include: true
+#| echo: false
+#| results: hide
+#| warning: false
+#| message: false
+
+# Do NOT modify
+lapply(packages, require, character.only = TRUE)
+```
+
+::: {.callout-caution title="Learning Goals"}
+1.  Getting more familiar with RStudio
+2.  Learn about a reproducible workflow in RStudio
+3.  Work on Homework 1 with your group. The goals of the homework are:
+    a.  Explore tidy data
+    b.  Get familiar with RStudio
+    c. Use Quarto to communicate reproducible document
+:::
+
+::: {.callout-note title="Additional Resources"}
+For more information about the topics covered in this chapter, refer to the resources below:
+
+-   [Setting up for success in COMP/STAT 112 (YouTube)](https://www.youtube.com/watch?v=0vmY6aDWmgU&list=PLyEH7o09I467e8zck95awweg_bGuLzqjz&index=2) by Lisa Lendway[^02-rstudio-workshop-1]
+-   [Quarto Cheatsheet (pdf)](https://rstudio.github.io/cheatsheets/quarto.pdf)
+-   [Quarto Get Started Guide (html)](https://quarto.org/docs/get-started/hello/rstudio.html)
+:::
+
+[^02-rstudio-workshop-1]: Lisa Lendway is a Mac alum, former Mac prof who helped shape this course, and R/RStudio whiz.
+
+## Warm-up
+
+### Background {.unnumbered}
+
+#### What's the point of this course? {.unnumbered}
+
+Build knowledge from data within a particular domain of inquiry, and particular contexts.
+
+#### Why will we use R/RStudio as a tool in this course? {.unnumbered}
+
+-   It's open access, ie, free!
+-   It's open source, ie, anyone can contribute to its development
+-   It's used broadly--here are some examples where R is used:
+    -   [Logan Pratico](https://www.youtube.com/watch?v=k6hD-Fagboc&list=PL9HYL-VRX0oRFZslRGHwHuwea7SvAATHp&index=8): making "eviction data accessible to the legal aid community"
+    -   [Ahmadou Dicko](https://www.rstudio.com/resources/rstudioglobal-2021/humanitarian-data-science-with-r/): humanitarians creating "life saving data products"
+    -   [Shelmith Kariuki](https://www.rstudio.com/resources/rstudioglobal-2021/rkenyacensus-package/): Kenyan government census
+    -   [Laura DeCicco](https://www.youtube.com/watch?v=w4roQNlPAkU&list=PL9HYL-VRX0oRFZslRGHwHuwea7SvAATHp&index=25): U.S. Geological Survey (USGS) discovery and retrieval of hydrologic data
+    -   [Nick Snellgrove & Uli Muellner](https://www.youtube.com/watch?v=iFXslnnxqYk&list=PL9HYL-VRX0oRFZslRGHwHuwea7SvAATHp&index=9): studying aquatic invasive species in MN
+
+#### RStudio Layout {.unnumbered}
+
+Below is a screenshot of the default layout for RStudio.
+
+#### Console {.unnumbered}
+
+Last class, we spent most of our time in the console. However,
+
+| Console is good for... | Console is bad for most everything else, including... |
+|:-----------------------|:----------------------------------------------|
+| quick calculations     | documenting our work                                  |
+| trying out code        | editing our work                                      |
+| pulling up help files  | communicating our work                                |
+|                        | being able to *reproduce* our work                    |
+
+### Quarto {.unnumbered}
+
+#### Reproducibility with Quarto {.unnumbered}
+
+It's important to document and communicate every step in the data analysis process, e.g. data collection, cleaning, and analysis, so that others and ourselves can *reproduce* and hence *verify* and *build upon* our work.
+
+RStudio includes tools for creating reproducible and lovely documents, webpages, books (like this online manual!), etc that allow us to interleave text, code, output, images, tables, etc. Quarto is integrated into RStudio and if you've used R Markdown, it looks very similar.
+
+::: {.callout-note title="Quarto"}
+Quarto is an technology that incorporates code from many programming languages such as R along with styled text (headers, bold, italics, links, etc.) using markdown.
+:::
+
+#### Quarto Example {.unnumbered}
+
+Download then move [this Quarto document](../student_notes/quarto-demo.qmd) into the activities folder of your portfolio project and do not forgot to include it in `_quarto.yml` file. Open the Quarto document in RStudio and follow the prompts therein. Note that this document explores the basics. We'll pick up more details as we go, often by making and learning from mistakes. The Quarto cheatsheets linked at the top of this chapter presents more features of Quarto.
+
+### Important Tips {.unnumbered}
+
+#### Quarto Files (.qmd) vs Console {.unnumbered}
+
+-   The console does *not* communicate with Quarto. Things you define or type in the console are NOT defined, stored, or run in the .qmd.
+
+-   Quarto *can* communicate with the console, but only if you tell it to.
+
+    -   IT WILL: if you run a chunk inside your .qmd (by clicking the green arrow), it is also run and stored in the console.
+    -   IT WON'T: if you render your .qmd to html but do not also run the chunks inside the .qmd, the results will be displayed in the html but *not* run or stored in the console.
+
+#### Comments {.unnumbered}
+
+Leaving short notes (known as comments) about what our code is doing is an important aspect of communication. It reminds our future selves, and communicates to others, what our thought and code process was. Hence comments are important to reproducibility. In the R chunks, comments are proceeded by a pound sign: `# This is an example comment`.
+
+::: {#fig-comments layout-ncol="2"}
+![](../images/uncommented_code_meme_2.png){#fig-cat-comment}
+
+![](../images/uncommented_code_meme_1.png){#fig-wizard-comment}
+
+Left: Leaving comments can feel silly in the moment [(Reddit source)](https://www.reddit.com/r/ProgrammerHumor/comments/8w54mx/code_comments_be_like/). Right: But your future self and others will thank you [(quickmeme source)](http://www.quickmeme.com/meme/3r25zh).
+:::
+
+#### Styling Guides {.unnumbered}
+
+All of this emphasis on communication is not specific to this class, it is a general expectation. Further, the code structure we'll use this semester reflects *common* practice, but not the *only* practice. Various companies / entities have their own R "style guides". Below are two examples of such styling guides.
+
+-   [tidyverse style guide](https://style.tidyverse.org/)
+    -   R developers like using the snake_case when naming variables
+-   [Google’s R Style Guide](https://google.github.io/styleguide/Rguide.html)
+    -   Google on the other hand recommends using the camelCase when naming variables
+
+## Homework 1
+
+
+::: {.callout-important title="Instructions, Reminder"}
+-   The following exercises will be due as homework 1.
+-   You should work on these exercises in groups, but write up your own work.
+:::
+
+### Getting Started {.unnumbered}
+
+For most homeworks and in-class activities, you will be provided with a Quarto (.qmd) template. However, it's also important to practice starting your *own* Quarto .qmd from scratch. You'll do that here.
+
+::: {.callout-important title="Instructions"}
+Before starting the exercises, take the following steps:
+
+-   Follow the instructions on [Appendix: Submitting Homeworks](99-appendix3.qmd) to create your homework repository
+
+-   In the **homeworks** folder of your cloned repository, create a new Quarto (.qmd) file: File window in the lower-right corner --\> Add New File (second icon from the left) --\> Quarto Doc... --\> name it `homework_01.qmd`
+
+-   Edit the`_quarto.yml` file to include the document
+
+-   In the newly created document, add the following YAML header at the top. The YAML option `number-sections` will prevent numbering the headers of the documents.
+
+    ``` yaml
+    ---
+    title: "Homework 1"
+    number-sections: false
+    ---
+    ```
+
+-   Below the yaml header, add section headers for each homework exercise as follows:
+
+    ``` markdown
+    ## Exercise 1: Warming up
+
+
+    ## Exercise 2: Import tidy data
+
+
+    ## Exercise 3: Tidy data properties
+
+
+    ## Exercise 4: Get to know the data
+
+
+    ## Exercise 5: Data structure
+
+
+    ## Exercise 6: Your turn
+
+
+    ## Exercise 7: Brainstorm
+    ```
+
+-   Render the book to html by clicking **Render Book** button in the **Build** located in the upper-right section.
+
+-   Put your answers to each exercise under the appropriate `# Exercise` section. **You do not need to write out the question/prompt itself.**
+:::
+
+### Exercise 1: Warming Up {.unnumbered}
+
+-   Write 1 sentence about one of your favorite foods at Cafe Mac. Make sure to include an *italicized* word and a **bold** word.
+-   Show a .png image of the food from the web. In Google, you can add `filetype:png` to the beginning of your search term, click on the photo you want, and copy the image address.
+
+::: {.callout-warning title="Check → Commit → Push"}
+Before continuing, click **Render Book** again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message **Finish HW1 Ex1** and push to GitHub.
+:::
+
+### Exercise 2: Import Tidy Data {.unnumbered}
+
+A quick survey was filled before class. So, let's work with this data. The first step to working with data in RStudio is getting it in there which depends on:
+
+-   file format, eg, `.xls` (Excel spreadsheet), `.csv`, or `.txt`
+-   storage locations, eg, online, on your desktop, or built into RStudio itself.
+
+Our data is stored as a **.csv** file **online**. Within a new R chunk, import and store this data as `survey`. Take note of the function name and the argument it takes.
+
+```{r}
+#| eval: false
+
+# Import the data
+survey <- read.csv("https://mac-stat.github.io/data/112_fall_2024_survey.csv")
+```
+
+Note that nothing new appears in your document after you import the data. This is because we *stored*, but didn't print, the data. Actually, we don't *want* to print the data in our .qmd file--it would be too messy.
+
+There are 2 quick ways to check out the entire data table to get a sense of its structure and contents:
+
+1.  Type `View(survey)` in the **console**.
+2.  In the Environment tab (upper right pane), click on `survey`.
+
+::: {.callout-warning title="Check → Commit → Push"}
+Before continuing, click **Render Book** again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message **Finish HW1 Ex2** and push to GitHub.
+:::
+
+### Exercise 3: Tidy Data Properties {.unnumbered}
+
+Answers the following prompts in a bulleted list in the order they're presented.
+
+-   What are the units of observation, ie, what does each row represent?
+-   Name one *quantitative* variable, ie, column, in the dataset.
+-   Name one *categorical* variable, ie, column, in the dataset.
+
+::: {.callout-tip title="Creating Bulleted List"}
+To create a bulleted list, use `-` in front of each item and make sure to leave an empty line before the list.
+:::
+
+::: {.callout-warning title="Check → Commit → Push"}
+Before continuing, click **Render Book** again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message **Finish HW1 Ex3** and push to GitHub.
+:::
+
+### Exercise 4: Know the Data {.unnumbered}
+
+Before we can learn anything from our data, we must understand its structure. For each function below, try out *one at a time* then write a *short* comment/note about what the function does in the indicated places. To make for easier recall later, try to connect your comment on what the function *does* to how it's *named*.
+
+```{r}
+#| eval: false
+
+# Replace this with a comment on what dim() does
+dim(survey)
+
+# Replace this with a comment on what nrow() does
+nrow(survey)
+
+# Replace this with a comment on what head() does
+head(survey)
+
+# Replace this with a comment on what head(___, 3) does
+head(survey, 3)
+
+# Replace this with a comment on what tail() does
+tail(survey)
+
+# Replace this with a comment on what names() does
+names(survey)
+```
+
+::: {.callout-warning title="Check → Commit → Push"}
+Before continuing, click **Render Book** again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message **Finish HW1 Ex4** and push to GitHub.
+:::
+
+### Exercise 5: Data Structure {.unnumbered}
+
+It's important that we understand the different types or structures of the **objects** we store. Having such information will inform what types of analyses are appropriate and the appropriate R code for these analyses. The `class()` function is important here. The example below shows how it can be used and what output it produces.
+
+```{r}
+x <- 3
+class(x)
+
+y <- "pizza"
+class(y)
+```
+
+There are various object classes, including:
+
+-   `num` or `numeric`
+-   `int` or `integer`
+-   `chr` or `character`
+-   `factor`, and
+-   `data.frame`.
+
+Complete the chunk below to explore the classes/structure of our `survey` data and the variables within the `survey` data:
+
+```{r}
+#| eval: false
+
+# Obtain the overall class of the survey object
+
+
+# Examine the structure of each variable within survey (including class)
+# Just take note of what information we gain here (no need to write more)
+str(survey)
+```
+
+::: {.callout-warning title="Check → Commit → Push"}
+Before continuing, click **Render Book** again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message **Finish HW1 Ex5** and push to GitHub.
+:::
+
+### Exercise 6: Your turn {.unnumbered}
+
+Let's practice these same ideas using data on World Cup football/soccer found on:
+
+`https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-11-29/worldcups.csv`
+
+Data is only useful if we know what it's measuring! You can find a **codebook**, i.e. document that describes the data, [here](https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-11-29). Address each prompt below using R functions. Include both the `#` prompt and your code in the chunk.
+
+```{r}
+#| eval: false
+
+# Import and name the dataset (you pick a name!)
+
+
+# Print the first 6 rows of the dataset
+
+
+# How many years of data do we have? And how many measurements do we have on each year?
+
+
+# Get a list of all variable names in the dataset
+
+
+# Display the class and other information for each variable in the dataset
+
+
+
+```
+
+::: {.callout-warning title="Check → Commit → Push"}
+Before continuing, click **Render Book** again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message **Finish HW1 Ex6** and push to GitHub.
+:::
+
+### Exercise 7: Brainstorm {.unnumbered}
+
+We've just scratched the surface. In a bulleted list (`-`), write out 3 questions about the World Cup that we might answer using these data. Be creative. The questions don't have to be questions we've learned how to answer yet.
+
+::: {.callout-warning title="Check → Commit → Push"}
+Before continuing, click **Render Book** again and make sure it looks like what you want. If happy, jump to GitHub Desktop and commit the changes with the message **Finish HW1 Ex7** and push to GitHub.
+:::
+
+::: {.callout-warning title="Check GitHub"}
+Go to your repository on GitHub (GitHub Desktop → Repository menu item → View on GitHub) and make sure that all your commits are there.
+:::
+
+Congratulation 🎉. You're done with Homework 1.
+
+### Optional: More Challenges {.unnumbered}
+
+If you like to do more, here are some things to think about--this will be different from student to student based on current R experience, post-graduate goals, interests, etc.
+
+If you are thinking about **communication** including aesthetics:
+
+-   Check out other features of Quarto, shown in the Quarto Start up Guide linked at the top of this chapter
+-   Check out the different [themes](https://quarto.org/docs/output-formats/html-themes.html) or ways you might style a Quarto document.
+-   Check out this gallery of [Quarto websites (and other documents)](https://quarto.org/docs/gallery/) and learn how to [build Quarto websites](https://quarto.org/docs/websites/) right from RStudio.
+
+If you are thinking about **data**, there are many places where you can get some. Actually, the World Cup data came from a weekly social data project called TidyTuesday. TidyTuesday is a community of R users from around the globe who share and dig into one different dataset per week then share their results in various channels such as YouTube and social media. Check out the repository of the TidyTuesday datasets at <https://github.com/rfordatascience/tidytuesday>. In the DataSets section, click on the year and then scroll down to a table of datasets posted that year. Pick a dataset of interest, import this into R, and play around! Be creative.

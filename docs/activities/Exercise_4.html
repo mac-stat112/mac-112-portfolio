@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>COMP/STAT112 Notebook - 2&nbsp; Exercise 4 - Bivariate Viz</title>
+<title>COMP/STAT112 Notebook - 4&nbsp; Exercise 4 - Bivariate Viz</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../activities/README.html">Activities</a></li><li class="breadcrumb-item"><a href="../activities/Exercise_4.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Exercise 4 - Bivariate Viz</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../activities/README.html">Activities</a></li><li class="breadcrumb-item"><a href="../activities/Exercise_4.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exercise 4 - Bivariate Viz</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -164,20 +164,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../activities/Exercise_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Exercise 1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../activities/Exercise_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Exercise 2 - RStudio Workshop</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../activities/Exercise_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Exercise 3 - Univariate Viz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Exercise 3 - Univariate Viz</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../activities/Exercise_4.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Exercise 4 - Bivariate Viz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exercise 4 - Bivariate Viz</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../activities/Exercise_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Multivariate Viz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Exercise 5 - Multivariate Viz</span></span></a>
   </div>
 </li>
       </ul>
@@ -194,13 +206,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/note-01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Note 01</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Note 01</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/note-02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Note 02</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Note 02</span></span></a>
   </div>
 </li>
       </ul>
@@ -215,17 +227,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#review" id="toc-review" class="nav-link active" data-scroll-target="#review"><span class="header-section-number">2.1</span> Review</a>
+  <li><a href="#review" id="toc-review" class="nav-link active" data-scroll-target="#review"><span class="header-section-number">4.1</span> Review</a>
   <ul class="collapse">
   <li><a href="#example-1-hangout-preferences" id="toc-example-1-hangout-preferences" class="nav-link" data-scroll-target="#example-1-hangout-preferences">EXAMPLE 1: Hangout Preferences</a></li>
   <li><a href="#example-2-temperature-preferences" id="toc-example-2-temperature-preferences" class="nav-link" data-scroll-target="#example-2-temperature-preferences">EXAMPLE 2: Temperature Preferences</a></li>
   </ul></li>
-  <li><a href="#new-stuff" id="toc-new-stuff" class="nav-link" data-scroll-target="#new-stuff"><span class="header-section-number">2.2</span> New stuff</a>
+  <li><a href="#new-stuff" id="toc-new-stuff" class="nav-link" data-scroll-target="#new-stuff"><span class="header-section-number">4.2</span> New stuff</a>
   <ul class="collapse">
-  <li><a href="#exploring-relationships" id="toc-exploring-relationships" class="nav-link" data-scroll-target="#exploring-relationships"><span class="header-section-number">2.2.1</span> Exploring relationships</a></li>
-  <li><a href="#general-guidance-for-building-bivariate-plots" id="toc-general-guidance-for-building-bivariate-plots" class="nav-link" data-scroll-target="#general-guidance-for-building-bivariate-plots"><span class="header-section-number">2.2.2</span> General guidance for building bivariate plots</a></li>
+  <li><a href="#exploring-relationships" id="toc-exploring-relationships" class="nav-link" data-scroll-target="#exploring-relationships"><span class="header-section-number">4.2.1</span> Exploring relationships</a></li>
+  <li><a href="#general-guidance-for-building-bivariate-plots" id="toc-general-guidance-for-building-bivariate-plots" class="nav-link" data-scroll-target="#general-guidance-for-building-bivariate-plots"><span class="header-section-number">4.2.2</span> General guidance for building bivariate plots</a></li>
   </ul></li>
-  <li><a href="#exercises-required" id="toc-exercises-required" class="nav-link" data-scroll-target="#exercises-required"><span class="header-section-number">2.3</span> Exercises (required)</a>
+  <li><a href="#exercises-required" id="toc-exercises-required" class="nav-link" data-scroll-target="#exercises-required"><span class="header-section-number">4.3</span> Exercises (required)</a>
   <ul class="collapse">
   <li><a href="#exercise-0-review" id="toc-exercise-0-review" class="nav-link" data-scroll-target="#exercise-0-review">Exercise 0: Review</a></li>
   <li><a href="#exercise-1-quantitative-vs-quantitative-intuition-check" id="toc-exercise-1-quantitative-vs-quantitative-intuition-check" class="nav-link" data-scroll-target="#exercise-1-quantitative-vs-quantitative-intuition-check">Exercise 1: Quantitative vs Quantitative Intuition Check</a></li>
@@ -248,9 +260,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../activities/README.html">Activities</a></li><li class="breadcrumb-item"><a href="../activities/Exercise_4.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Exercise 4 - Bivariate Viz</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../activities/README.html">Activities</a></li><li class="breadcrumb-item"><a href="../activities/Exercise_4.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exercise 4 - Bivariate Viz</span></a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Exercise 4 - Bivariate Viz</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exercise 4 - Bivariate Viz</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -267,8 +279,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="review" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="review"><span class="header-section-number">2.1</span> Review</h2>
+<section id="review" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="review"><span class="header-section-number">4.1</span> Review</h2>
 <p>Let’s review some <em>univariate</em> concepts and code using our class survey data. If the answers aren’t at the top of your mind, don’t fret! We’ve barely started speaking this new language, and learned a ton of vocab last week, so you naturally won’t remember it all.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Import data</span></span>
@@ -323,15 +335,15 @@ Bar Charts vs.&nbsp;Histograms
 </div>
 </section>
 </section>
-<section id="new-stuff" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="new-stuff"><span class="header-section-number">2.2</span> New stuff</h2>
+<section id="new-stuff" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="new-stuff"><span class="header-section-number">4.2</span> New stuff</h2>
 <p>Thus far, we’ve been studying one variable at a time, using <em>univariate</em> plots. But once we get a sense of how individual variables behave on their own, our questions often turn to <em>relationships</em> among variables. For example, in our <code>hikes</code> data:</p>
 <ul>
 <li>How much <code>time</code> does it take to complete a hike? ——&gt; How is <code>time</code> related to a hike’s <code>elevation</code>? What about its <code>length</code>?</li>
 <li>How does difficult <code>rating</code> vary from hike to hike? ——-&gt; How is difficulty <code>rating</code> related to a hike’s <code>ascent</code>?</li>
 </ul>
-<section id="exploring-relationships" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="exploring-relationships"><span class="header-section-number">2.2.1</span> Exploring relationships</h3>
+<section id="exploring-relationships" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="exploring-relationships"><span class="header-section-number">4.2.1</span> Exploring relationships</h3>
 <p>Exploring univariate patterns often sparks follow-up questions about <strong>relationships</strong> between 2+ variables. Often, but not always, variables take on specific roles:</p>
 <ul>
 <li><strong>response variable</strong>: the variable whose variability we would like to explain (<code>time</code> to complete a hike)</li>
@@ -433,8 +445,8 @@ Bar Charts vs.&nbsp;Histograms
 </div>
 </section>
 </section>
-<section id="general-guidance-for-building-bivariate-plots" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="general-guidance-for-building-bivariate-plots"><span class="header-section-number">2.2.2</span> General guidance for building bivariate plots</h3>
+<section id="general-guidance-for-building-bivariate-plots" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="general-guidance-for-building-bivariate-plots"><span class="header-section-number">4.2.2</span> General guidance for building bivariate plots</h3>
 <p>As with univariate plots, an appropriate visualization for the relationship between 2 variables depends upon whether the variables are <strong>quantitative</strong> or <strong>categorical</strong>. In general:</p>
 <ul>
 <li>Each <strong>quantitative variable</strong> requires a new <em>axis</em> (or a quantitative <em>scale</em> if we run out of axes).</li>
@@ -443,8 +455,8 @@ Bar Charts vs.&nbsp;Histograms
 </ul>
 </section>
 </section>
-<section id="exercises-required" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="exercises-required"><span class="header-section-number">2.3</span> Exercises (required)</h2>
+<section id="exercises-required" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="exercises-required"><span class="header-section-number">4.3</span> Exercises (required)</h2>
 <p><a href="https://github.com/tonmcg/US_County_Level_Election_Results_08-20">Github user Tony McGovern</a> has compiled and made available 2020/2016/2012 presidential election results for most of 3000+ U.S. counties, except Alaska. (Image: <a href="https://commons.wikimedia.org/wiki/File:Map_of_USA_with_county_outlines_(black_%26_white).png">Wikimedia Commons</a>)</p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Map_of_USA_with_county_outlines_%28black_%26_white%29.png" class="img-fluid"></p>
 <p>A wrangled version of this data, is imported below, after being combined with:</p>
@@ -1347,12 +1359,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../activities/Exercise_3.html" class="pagination-link" aria-label="Exercise 3 - Univariate Viz">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Exercise 3 - Univariate Viz</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Exercise 3 - Univariate Viz</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../activities/Exercise_5.html" class="pagination-link" aria-label="Multivariate Viz">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Multivariate Viz</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../activities/Exercise_5.html" class="pagination-link" aria-label="Exercise 5 - Multivariate Viz">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Exercise 5 - Multivariate Viz</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">

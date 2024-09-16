@@ -12,7 +12,9 @@ book:
     - index.qmd
 
     - part: activities/README.qmd
-      chapters: 
+      chapters:
+      - activities/Exercise_1.qmd
+      - activities/Exercise_2.qmd
       - activities/Exercise_3.qmd
       - activities/Exercise_4.qmd
       - activities/Exercise_5.qmd
